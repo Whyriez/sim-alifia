@@ -2275,6 +2275,7 @@ textarea.form-control-lg {
     transition: none;
   }
 }
+
 .form-floating > .form-control {
   padding: 1rem 0.75rem;
 }
