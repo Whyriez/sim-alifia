@@ -49,7 +49,7 @@
                         Pemerintahan
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Struktur Organisasi</a></li>
+                        <li><a class="dropdown-item" href="strukturOrganisasi.php">Struktur Organisasi</a></li>
                         <li><a class="dropdown-item" href="perangkatDesa.php">Perangkat Desa</a></li>
                         <li><a class="dropdown-item" href="lembagaDesa.php">Lembaga Desa</a></li>
                         <li>
@@ -67,7 +67,8 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="#">Potensi Desa</a>
+                    <a class="nav-link text-dark <?php if ($page == 'potensiDesa.php') : echo 'bg-primary rounded text-white';
+                                                    endif; ?>" aria-current="page" href="potensiDesa.php">Potensi Desa</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

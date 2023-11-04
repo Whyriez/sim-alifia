@@ -43,6 +43,7 @@ if (isset($_POST['tambahBerita'])) {
     $judul = $_POST['judul'];
     $deskripsi = $_POST['deskripsi'];
     $gambar = $_FILES['gambar']['name'];
+    $tanggal = date('Y-m-d');
 
     $timestamp = time();
     $namaGambar = $timestamp . '_' . $gambar;
@@ -52,7 +53,7 @@ if (isset($_POST['tambahBerita'])) {
 
     move_uploaded_file($tmpFile, $dir . $namaGambar);
 
-    $result = mysqli_query($koneksi, "INSERT INTO berita (judul, deskripsi, gambar) VALUES ('$judul','$deskripsi','$namaGambar')");
+    $result = mysqli_query($koneksi, "INSERT INTO berita (judul, deskripsi, gambar, tanggal) VALUES ('$judul','$deskripsi','$namaGambar', '$tanggal')");
 
     if ($result) {
         header("Location: berita.php");
@@ -64,6 +65,7 @@ if (isset($_POST['ubahBerita'])) {
     $judul = $_POST['judul'];
     $deskripsi = $_POST['deskripsi'];
     $gambar = $_FILES['gambar']['name'];
+    $tanggal = date('Y-m-d');
 
     $queryShow = "SELECT * FROM berita WHERE id = '$id'";
     $sqlShow = mysqli_query($koneksi, $queryShow);
@@ -82,7 +84,7 @@ if (isset($_POST['ubahBerita'])) {
     }
 
 
-    $query = "UPDATE berita SET judul='$judul',deskripsi='$deskripsi', gambar= '$namaGambar' WHERE id = '$id'";
+    $query = "UPDATE berita SET judul='$judul',deskripsi='$deskripsi', gambar= '$namaGambar', tanggal= '$tanggal' WHERE id = '$id'";
     $sql = mysqli_query($koneksi, $query);
 
     if ($result) {
@@ -103,4 +105,76 @@ if (isset($_GET['hapus'])) {
     $sql = mysqli_query($koneksi, $query);
 
     if ($sql) header("Location: admin/berita.php");
+}
+
+
+
+if (isset($_POST['tambahPotensiDesa'])) {
+    $judul = $_POST['judul'];
+    $deskripsi = $_POST['deskripsi'];
+    $kategori = $_POST['kategori'];
+    $gambar = $_FILES['gambar']['name'];
+    $tanggal = date('Y-m-d');
+
+    $timestamp = time();
+    $namaGambar = $timestamp . '_' . $gambar;
+
+    $dir = "../assets/gambar/";
+    $tmpFile = $_FILES['gambar']['tmp_name'];
+
+    move_uploaded_file($tmpFile, $dir . $namaGambar);
+
+    $result = mysqli_query($koneksi, "INSERT INTO potensi_desa (judul, deskripsi, kategori, gambar, tanggal) VALUES ('$judul','$deskripsi','$kategori', '$namaGambar', '$tanggal')");
+
+    if ($result) {
+        header("Location: potensiDesa.php");
+    }
+}
+
+if (isset($_POST['ubahPotensiDesa'])) {
+    $id = $_POST['id'];
+    $judul = $_POST['judul'];
+    $deskripsi = $_POST['deskripsi'];
+    $kategori = $_POST['kategori'];
+    $gambar = $_FILES['gambar']['name'];
+    $tanggal = date('Y-m-d');
+
+    $queryShow = "SELECT * FROM potensi_desa WHERE id = '$id'";
+    $sqlShow = mysqli_query($koneksi, $queryShow);
+    $result = mysqli_fetch_assoc($sqlShow);
+
+
+
+    if ($_FILES['gambar']['name'] == "") {
+        $namaGambar = $result['gambar'];
+    } else {
+        $gambar = $_FILES['gambar']['name'];
+        unlink("../assets/gambar/" . $result['gambar']);
+        $timestamp = time();
+        $namaGambar = $timestamp . '_' . $gambar;
+        move_uploaded_file($_FILES['gambar']['tmp_name'], "../assets/gambar/" . $namaGambar);
+    }
+
+
+    $query = "UPDATE potensi_desa SET judul='$judul',deskripsi='$deskripsi', kategori= '$kategori', gambar= '$namaGambar', tanggal= '$tanggal' WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($result) {
+        header("Location: potensiDesa.php");
+    }
+}
+
+
+if (isset($_GET['hapusPotensi'])) {
+    $id = $_GET['hapusPotensi'];
+    $queryShow = "SELECT * FROM potensi_desa WHERE id = '$id'";
+    $sqlShow = mysqli_query($koneksi, $queryShow);
+    $result = mysqli_fetch_assoc($sqlShow);
+
+    unlink("assets/gambar/" . $result['gambar']);
+
+    $query = "DELETE FROM potensi_desa WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($sql) header("Location: admin/potensiDesa.php");
 }

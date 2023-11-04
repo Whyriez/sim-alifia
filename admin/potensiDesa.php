@@ -8,12 +8,12 @@ require('../function.php');
     <div id="content">
         <?php include('../template/admin/navbar.php') ?>
         <div class="container-fluid">
-            <h1 class="h3 mb-2 text-gray-800">Data Berita</h1>
+            <h1 class="h3 mb-2 text-gray-800">Data Potensi Desa</h1>
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Tabel Data Berita</h6>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Berita</button>
+                    <h6 class="m-0 font-weight-bold text-primary">Tabel Data Potensi Desa</h6>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Potensi Desa</button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -23,22 +23,24 @@ require('../function.php');
                                     <th>Gambar</th>
                                     <th>Judul</th>
                                     <th>Deskripsi</th>
+                                    <th>Kategori</th>
                                     <th>Tanggal</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $loop = mysqli_query($koneksi, "select * from berita");
+                                <?php $loop = mysqli_query($koneksi, "select * from potensi_desa");
 
                                 while ($a = mysqli_fetch_array($loop)) { ?>
                                     <tr>
                                         <td> <img src="../assets/gambar/<?= $a['gambar'] ?>" width="50" height="50" alt=""></td>
                                         <td><?= $a['judul'] ?></td>
                                         <td><?= $a['deskripsi'] ?></td>
+                                        <td><?= $a['kategori'] ?></td>
                                         <td><?= $a['tanggal'] ?></td>
                                         <td>
                                             <button type="button" data-toggle="modal" data-target="#modalEdit<?= $a['id'] ?>" class="btn btn-primary btn-sm">Edit</button>
-                                            <a href="../function.php?hapus=<?= $a['id'] ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?')">Hapus</a>
+                                            <a href="../function.php?hapusPotensi=<?= $a['id'] ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?')">Hapus</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -49,6 +51,7 @@ require('../function.php');
                                     <th>Gambar</th>
                                     <th>Judul</th>
                                     <th>Deskripsi</th>
+                                    <th>Kategori</th>
                                     <th>Tanggal</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -74,7 +77,7 @@ require('../function.php');
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Berita</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Potensi Berita</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -90,13 +93,17 @@ require('../function.php');
                             <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                         <div class="form-group">
+                            <label for="kategori">Kategori</label>
+                            <input type="text" name="kategori" class="form-control" id="kategori" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
                             <label for="exampleFormControlFile1">Upload Gambar</label>
                             <input type="file" class="form-control-file" name="gambar" id="exampleFormControlFile1">
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <button type="submit" name="tambahBerita" class="btn btn-primary">Tambah</button>
+                        <button type="submit" name="tambahPotensiDesa" class="btn btn-primary">Tambah</button>
                     </div>
                 </form>
             </div>
@@ -112,7 +119,7 @@ require('../function.php');
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalEditLabel">Perbarui Berita</h5>
+                        <h5 class="modal-title" id="modalEditLabel">Perbarui Potensi Desa</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -129,6 +136,10 @@ require('../function.php');
                                 <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"> <?= $a['deskripsi'] ?></textarea>
                             </div>
                             <div class="form-group">
+                                <label for="kategori">Kategori</label>
+                                <input type="text" name="kategori" class="form-control" value="<?= $a['kategori'] ?>" id="kategori" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
                                 <label for="exampleFormControlFile1">Upload Gambar</label>
                                 <input type="file" class="form-control-file" name="gambar" id="exampleFormControlFile1">
                                 <img src="../assets/gambar/<?= $a['gambar'] ?>" width="100" class="mt-2" height="100" alt="">
@@ -136,7 +147,7 @@ require('../function.php');
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                            <button type="submit" name="ubahBerita" class="btn btn-primary">Ubah</button>
+                            <button type="submit" name="ubahPotensiDesa" class="btn btn-primary">Ubah</button>
                         </div>
                     </form>
                 </div>

@@ -3,7 +3,7 @@ $title = "Struktur Organisasi";
 include("template/user/header.php");
 include("template/user/navbar.php");
 
-$detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi'; // Mengecek jika ada parameter detail di URL
+$detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi';
 ?>
 
 <div class="">

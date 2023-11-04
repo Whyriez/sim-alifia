@@ -3,6 +3,10 @@ session_start();
 include('template/headerLogin.php');
 require('function.php');
 
+if (isset($_SESSION['name'])) {
+    header('Location: admin');
+}
+
 ?>
 <div class="container">
 
@@ -26,13 +30,13 @@ require('function.php');
                                 <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                             </div>
                             <button name="login" type="submit" class="btn btn-primary btn-user btn-block">
-                                Login
+                                Masuk
                             </button>
                             <hr>
                         </form>
                         <hr>
                         <div class="text-center">
-                            <a class="small" href="register.php">Create an Account!</a>
+                            <a class="small" href="register.php">Buat Akun</a>
                         </div>
                     </div>
                 </div>
