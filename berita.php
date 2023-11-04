@@ -1,5 +1,5 @@
 <?php
-$title = "Home";
+$title = "Berita";
 include("template/user/header.php");
 include("template/user/navbar.php"); ?>
 
