@@ -60,9 +60,9 @@
                         Informasi
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Berita</a></li>
-                        <li><a class="dropdown-item" href="#">Pengumuman</a></li>
-                        <li><a class="dropdown-item" href="#">APBDesa</a></li>
+                        <li><a class="dropdown-item" href="berita.php">Berita</a></li>
+                        <li><a class="dropdown-item" href="pengumuman.php">Pengumuman</a></li>
+                        <li><a class="dropdown-item" href="apbDesa.php">APBDesa</a></li>
                         <li>
                     </ul>
                 </li>
