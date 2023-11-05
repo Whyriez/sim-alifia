@@ -42,6 +42,7 @@ if (isset($_POST['login'])) {
 if (isset($_POST['tambahBerita'])) {
     $judul = $_POST['judul'];
     $deskripsi = $_POST['deskripsi'];
+    $deskripsi = nl2br($deskripsi);
     $gambar = $_FILES['gambar']['name'];
     $tanggal = date('Y-m-d');
 
@@ -64,6 +65,7 @@ if (isset($_POST['ubahBerita'])) {
     $id = $_POST['id'];
     $judul = $_POST['judul'];
     $deskripsi = $_POST['deskripsi'];
+    $deskripsi = nl2br($deskripsi);
     $gambar = $_FILES['gambar']['name'];
     $tanggal = date('Y-m-d');
 
@@ -112,6 +114,7 @@ if (isset($_GET['hapus'])) {
 if (isset($_POST['tambahPotensiDesa'])) {
     $judul = $_POST['judul'];
     $deskripsi = $_POST['deskripsi'];
+    $deskripsi = nl2br($deskripsi);
     $kategori = $_POST['kategori'];
     $gambar = $_FILES['gambar']['name'];
     $tanggal = date('Y-m-d');
@@ -135,6 +138,7 @@ if (isset($_POST['ubahPotensiDesa'])) {
     $id = $_POST['id'];
     $judul = $_POST['judul'];
     $deskripsi = $_POST['deskripsi'];
+    $deskripsi = nl2br($deskripsi);
     $kategori = $_POST['kategori'];
     $gambar = $_FILES['gambar']['name'];
     $tanggal = date('Y-m-d');

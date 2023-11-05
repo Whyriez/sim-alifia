@@ -1,18 +1,21 @@
 <?php
-$title = "Detail Berita";
-include("template/user/header.php");
-include("template/user/navbar.php");
 require('function.php');
-
 if (isset($_GET['detail'])) {
+    $title = "Detail Berita";
     $idBerita = $_GET['detail'];
     $query = mysqli_query($koneksi, "SELECT * FROM berita WHERE id = $idBerita");
     $berita = mysqli_fetch_assoc($query);
 } else if (isset($_GET['detailPotensi'])) {
+    $title = "Detail Potensi Desa";
     $idPotensi = $_GET['detailPotensi'];
     $query = mysqli_query($koneksi, "SELECT * FROM potensi_desa WHERE id = $idPotensi");
     $potensi = mysqli_fetch_assoc($query);
 }
+
+
+include("template/user/header.php");
+include("template/user/navbar.php");
+
 
 
 ?>

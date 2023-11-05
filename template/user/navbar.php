@@ -8,7 +8,7 @@
         <h6 class="m-0">088828323</h6>
     </div>
 </div>
-<nav class="navbar navbar-expand-lg p-3 bg-body-tertiary">
+<nav class="navbar navbar-expand-lg p-3 navbar-light bg-light">
     <div class="container">
         <div class="d-flex align-items-center">
             <a class="navbar-brand text-dark" href="index.php"><img src="assets/img/LogoBonebolango.png" width="50" alt="">
@@ -56,7 +56,8 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-dark  <?php if ($page == 'berita.php' || $page == 'pengunguman.php' || $page == 'apbDesa.php' || $page == 'detailApbdes.php' || $page == 'detail.php') : echo 'bg-primary rounded text-white';
+                                                                    endif; ?> " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Informasi
                     </a>
                     <ul class="dropdown-menu">

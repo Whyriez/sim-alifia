@@ -39,9 +39,6 @@ require('function.php');
         </div>
     </div>
 
-
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -50,12 +47,14 @@ require('function.php');
                 <?php $loop = mysqli_query($koneksi, "select * from berita ORDER BY tanggal DESC LIMIT 2");
 
                 while ($a = mysqli_fetch_array($loop)) { ?>
-                    <div class="d-flex mb-4">
-                        <img src="assets/gambar/<?= $a['gambar'] ?>" alt="Gambar" class="img-fluid w-25 mr-3">
+                    <div class="d-flex flex-column flex-md-row mb-4 align-items-md-center">
+                        <div class="w-md-25   mr-md-3 ">
+                            <img src="assets/gambar/<?= $a['gambar'] ?>" alt="Gambar" width="800" class="img-fluid ">
+                        </div>
                         <div style="margin-left: 1.25rem;">
-                            <h3 class="text-primary mb-2"><?= $a['judul'] ?></h3>
+                            <h3 class="text-primary mb-2"><a href="detail.php?detail=<?= $a['id'] ?>" style="text-decoration: none;"><?= $a['judul'] ?></a></h3>
                             <p>
-                                <?= substr($a['deskripsi'], 0, 100); ?>
+                                <?= substr($a['deskripsi'], 0, 400); ?>
                                 <a href="detail.php?detail=<?= $a['id'] ?>" class="btn-lihat-selengkapnya">Lihat Selengkapnya</a>
                             </p>
                         </div>
@@ -99,6 +98,80 @@ require('function.php');
 
             </div>
         </div>
+    </div>
+
+    <div class="container-fluid mb-3">
+        <div class="row">
+            <div class="col-md-8">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18977.676900650702!2d123.05819865902265!3d0.6455003100130698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x327932b6f9ea9b47%3A0xe2e84ed52676426e!2sTupa%2C%20Kec.%20Bulango%20Utara%2C%20Kabupaten%20Bone%20Bolango%2C%20Gorontalo!5e0!3m2!1sid!2sid!4v1699152685497!5m2!1sid!2sid" class="w-100" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-md-4">
+                <div style="overflow-x: auto;">
+                    <div class="container">
+                        <table>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Kode PUM</td>
+                                <td>:</td>
+                                <td style="font-size: small;">5201032004</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Tahun Pembentukan</td>
+                                <td>:</td>
+                                <td style="font-size: small;">2000</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Dasar Hukum</td>
+                                <td>:</td>
+                                <td style="font-size: small;">SURAT KEPUTUSAN GUBERNUR NTB NOMOR : 409 TAHUN 2000</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Tipologi</td>
+                                <td>:</td>
+                                <td style="font-size: small;">TERITORIAL</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Klasifikasi</td>
+                                <td>:</td>
+                                <td style="font-size: small;">SWAKARYA</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Kategori</td>
+                                <td>:</td>
+                                <td style="font-size: small;">MAJU</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Luas Wilayah</td>
+                                <td>:</td>
+                                <td style="font-size: small;">239.221 Ha</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Batas Sebelah Utara</td>
+                                <td>:</td>
+                                <td style="font-size: small;">DESA SEDAU</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Batas Sebelah Selatan</td>
+                                <td>:</td>
+                                <td style="font-size: small;">DESA PEMEPEK</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Batas Sebelah Timur</td>
+                                <td>:</td>
+                                <td style="font-size: small;">DESA PEMEPEK</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; font-size: small; ">Batas Sebelah Barat</td>
+                                <td>:</td>
+                                <td style="font-size: small;">DESA GOLONG</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
