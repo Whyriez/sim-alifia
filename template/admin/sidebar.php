@@ -40,6 +40,29 @@
             <span>Potensi Desa</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Pelayanan Surat</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Jenis Surat :</h6>
+                <a class="collapse-item" href="suratPindahPenduduk.php">Surat Pindah Penduduk</a>
+                <a class="collapse-item" href="suratPengantarNikah.php">Surat Pengantar Nikah</a>
+                <a class="collapse-item" href="suratMeninggalDunia.php">Suket Meninggal Dunia</a>
+                <a class="collapse-item" href="suketAhliWaris.php">Suket Ahli Waris</a>
+                <a class="collapse-item" href="suketKelahiran.php">Suket kelahiran</a>
+                <a class="collapse-item" href="suketTanah.php">Suket Tanah/Sertif Tanah</a>
+                <a class="collapse-item" href="suratKK.php">Surat Kartu Keluarga</a>
+                <a class="collapse-item" href="suratAkta.php">Surat Akta Kelahiran</a>
+                <a class="collapse-item" href="suratTidakMampu.php">Suket Tidak Mampu</a>
+                <a class="collapse-item" href="suketPenghasilan.php">Suket Penghasilan</a>
+                <a class="collapse-item" href="sppbd.php">SPPBD (SPORADIK)</a>
+            </div>
+        </div>
+    </li>
+
 
     <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
