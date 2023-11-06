@@ -18,7 +18,7 @@ include("template/user/navbar.php"); ?>
                     <td>Jl. Jurusan Keru - Sesaot Narmada <img src="assets/img/LogoBonebolango.png" class="float-end" width="40" alt=""></td>
                 </tr>
                 <tr>
-                    <td>BADAN PERMUSYAWARATAN DESA <br> <span class="badge bg-primary">BPD</span></td>
+                    <td>LEMBAGA KEMASYARAKATAN <br> <span class="badge bg-primary">LKD</span></td>
                     <td>
                         Jl. Jurusan Keru - Sesaot Narmada <img src="assets/img/LogoBonebolango.png" class="float-end " width="40" alt="">
                     </td>

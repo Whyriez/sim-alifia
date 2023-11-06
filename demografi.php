@@ -10,7 +10,7 @@ include("template/user/navbar.php"); ?>
         <img src="assets/img/FOTO_KANTOR_DESA.jpeg" class="w-100 mb-3" alt="">
     </div>
     <div class="text-left">
-        <h6 class="text-uppercase">JUMLAH PENDUDUK DESA KERU TAHUN 2022</h6>
+        <h6 class="text-uppercase">JUMLAH PENDUDUK DESA TUPA TAHUN 2021</h6>
         <p>Desa Keru adalah merupakan Desa yang terletak di bagian timur Kabupaten Lombok Barat Bagian tengah yang berbatasan dengan Kabupaten Lombok Tengah dengan batas-batas :</p>
 
         <table class="table table-bordered">
@@ -20,15 +20,22 @@ include("template/user/navbar.php"); ?>
             <tbody>
                 <tr>
                     <td>Jumlah laki-laki</td>
-                    <td>2.822 orang</td>
+                    <td>573 orang</td>
                 </tr>
                 <tr>
-                    <td>Jumlah laki-laki</td>
-                    <td>2.822 orang</td>
+                    <td>Jumlah perempuan</td>
+                    <td>582 orang</td>
+                </tr>
+                <tr>
+                    <td>Jumlah total</td>
+                    <td>1155 orang</td>
+                </tr>
+                <tr>
+                    <td>Jumlah kepala keluarga</td>
+                    <td>355 KK</td>
                 </tr>
             </tbody>
         </table>
-        <p>Untuk informasi lebih lengkap bisa dilihat di menu informasi dan pilih download Profil Desa Keru Tahun 2023.</p>
     </div>
 </div>
 

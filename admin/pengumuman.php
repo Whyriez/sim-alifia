@@ -1,21 +1,18 @@
 <?php
+require('../function.php');
 include('../template/admin/header.php');
 include('../template/admin/sidebar.php');
-
-require('../function.php');
-
-// $loop = mysqli_query($koneksi,"select * from pengumuman");
 ?>
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
         <?php include('../template/admin/navbar.php') ?>
         <div class="container-fluid">
-            <h1 class="h3 mb-2 text-gray-800">Data Pengemuman</h1>
+            <h1 class="h3 mb-2 text-gray-800">Data Pengumuman</h1>
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Tabel Data 'Pengumuman'</h6>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Berita</button>
+                    <h6 class="m-0 font-weight-bold text-primary">Tabel Data Pengumuman</h6>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Tambah Pengumuman</button>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -35,8 +32,8 @@ require('../function.php');
                                 while ($a = mysqli_fetch_array($loop)) { ?>
                                     <tr>
                                         <td> <img src="../assets/gambar/<?= $a['gambar'] ?>" width="50" height="50" alt=""></td>
-                                        <td><?= $a['Judul'] ?></td>
-                                        <td><?= $a['Deskripsi'] ?></td>
+                                        <td><?= $a['judul'] ?></td>
+                                        <td><?= $a['deskripsi'] ?></td>
                                         <td><?= $a['tanggal'] ?></td>
                                         <td>
                                             <button type="button" data-toggle="modal" data-target="#modalEdit<?= $a['id'] ?>" class="btn btn-primary btn-sm">Edit</button>

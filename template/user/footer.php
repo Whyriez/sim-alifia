@@ -18,9 +18,9 @@
                         Profil
                     </h6>
                     <p>
-                        Desa Keru - Kecamatan Narmada <br>
-                        Kabupaten Lombok Barat - Nusa Tenggara Barat <br>
-                        Desa Keru merupakan Desa pemekaran dari Desa Sedau yang dimekarkan pada tahun 1999 dan dinyatakan difinitif pada tanggal 21 Maret 2000, yang dibuktikan dengan Keputusan Gubernur Nusa Tenggara barat Nomor 409 Tahun 2000.
+                        Desa Tupa - Kecamatan Bulango Utara <br>
+                        Kabupaten Bone Bolango - Gorontalo <br>
+                        Desa Tupa adalah sebuah desa yang berada di kecamatan Bulango Utara, Kabupaten Bone Bolango, Gorontalo, Indonesia.
                     </p>
                 </div>
                 <!-- Grid column -->
@@ -32,7 +32,8 @@
                         Tautan
                     </h6>
                     <ul>
-                        <li><a href="#!" class="text-reset">Kecamatan</a></li>
+                        <li><a href="#!" class="text-reset">Kecamatan Bulango Utara</a></li>
+                        <li><a href="https://bonebolangokab.go.id/" target="_blank" class="text-reset">Kabupaten Bone Bolango</a></li>
                     </ul>
                 </div>
                 <!-- Grid column -->

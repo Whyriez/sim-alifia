@@ -1,8 +1,7 @@
 <?php
+require('../function.php');
 include('../template/admin/header.php');
 include('../template/admin/sidebar.php');
-
-require('../function.php');
 ?>
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
@@ -112,7 +111,7 @@ require('../function.php');
 
 
     <!-- Modal Edit-->
-    <?php $loop = mysqli_query($koneksi, "select * from berita");
+    <?php $loop = mysqli_query($koneksi, "select * from potensi_desa");
 
     while ($a = mysqli_fetch_array($loop)) { ?>
         <div class="modal fade" id="modalEdit<?= $a['id'] ?>" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">

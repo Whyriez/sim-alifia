@@ -33,7 +33,8 @@ require('function.php');
 
                     <p>
                         <?= substr($a['deskripsi'], 0, 400); ?>
-                        <a href="detail.php?detailPotensi=<?= $a['id'] ?>" class="btn-lihat-selengkapnya">Lihat Selengkapnya</a>
+                        <a href="detail.php?detailPotensi=<?= $a['id'] ?>" style="font-size: 11px; font-weight: 500; padding: 3px 8px; " class=" btn btn-primary"> selengkapnya <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
                     </p>
                 </div>
             </div>

@@ -55,7 +55,8 @@ require('function.php');
                             <h3 class="text-primary mb-2"><a href="detail.php?detail=<?= $a['id'] ?>" style="text-decoration: none;"><?= $a['judul'] ?></a></h3>
                             <p>
                                 <?= substr($a['deskripsi'], 0, 400); ?>
-                                <a href="detail.php?detail=<?= $a['id'] ?>" class="btn-lihat-selengkapnya">Lihat Selengkapnya</a>
+                                <a href="detail.php?detail=<?= $a['id'] ?>" style="font-size: 11px; font-weight: 500; padding: 3px 8px; " class=" btn btn-primary"> selengkapnya <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </a>
                             </p>
                         </div>
                     </div>
@@ -142,27 +143,27 @@ require('function.php');
                             <tr>
                                 <td style="font-weight: bold; font-size: small; ">Luas Wilayah</td>
                                 <td>:</td>
-                                <td style="font-size: small;">239.221 Ha</td>
+                                <td style="font-size: small;">299,50 Ha</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: bold; font-size: small; ">Batas Sebelah Utara</td>
                                 <td>:</td>
-                                <td style="font-size: small;">DESA SEDAU</td>
+                                <td style="font-size: small;">Desa Tulo'a dan Bunu'o</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: bold; font-size: small; ">Batas Sebelah Selatan</td>
                                 <td>:</td>
-                                <td style="font-size: small;">DESA PEMEPEK</td>
+                                <td style="font-size: small;">Desa Boidu</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: bold; font-size: small; ">Batas Sebelah Timur</td>
                                 <td>:</td>
-                                <td style="font-size: small;">DESA PEMEPEK</td>
+                                <td style="font-size: small;">Desa Tulo'a dan Kopi</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: bold; font-size: small; ">Batas Sebelah Barat</td>
                                 <td>:</td>
-                                <td style="font-size: small;">DESA GOLONG</td>
+                                <td style="font-size: small;">Desa Boidu</td>
                             </tr>
                         </table>
 

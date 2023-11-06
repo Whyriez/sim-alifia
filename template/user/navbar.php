@@ -72,6 +72,16 @@
                                                     endif; ?>" aria-current="page" href="potensiDesa.php">Potensi Desa</a>
                 </li>
                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark <?php if ($page == 'pelayananSurat.php') : echo 'bg-primary rounded text-white';
+                                                                    endif; ?> " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Pelayanan Masyarakat
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="pelayananSurat.php">Pelayanan Surat Menyurat</a></li>
+                        <li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Media Sosial
                     </a>

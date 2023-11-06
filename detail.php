@@ -15,7 +15,6 @@ if (isset($_GET['detail'])) {
     $idPengumuman = $_GET['pengumuman'];
     $query = mysqli_query($koneksi, "SELECT * FROM pengumuman WHERE id = $idPengumuman");
     $pengumuman = mysqli_fetch_assoc($query);
-
 }
 
 
@@ -46,9 +45,9 @@ include("template/user/navbar.php");
         <img src="assets/gambar/<?= $potensi['gambar']; ?>" class="w-100 mb-3" alt="">
         <p><?= $potensi['deskripsi']; ?></p>
     <?php elseif (isset($_GET['pengumuman'])) : ?>
-        <h4 class="mb-3"><?= $pengumuman['Judul']; ?></h4>
+        <h4 class="mb-3"><?= $pengumuman['judul']; ?></h4>
         <img src="assets/gambar/<?= $pengumuman['gambar']; ?>" class="w-100 mb-3" alt="">
-        <p><?= $pengumuman['Deskripsi']; ?></p>
+        <p><?= $pengumuman['deskripsi']; ?></p>
     <?php else : ?>
         <h2 class="text-left text-primary mb-2">Halaman Tidak Ditemukan</h2>
     <?php endif; ?>

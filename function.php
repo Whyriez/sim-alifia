@@ -1,7 +1,5 @@
 <?php
-
 $koneksi = mysqli_connect("localhost", "root", "", "sim-alifia");
-
 
 if (isset($_POST['login'])) {
     session_start();
@@ -183,13 +181,13 @@ if (isset($_GET['hapusPotensi'])) {
     if ($sql) header("Location: admin/potensiDesa.php");
 }
 
-// ? Tambah Data Pengumuman
+// Tambah Data Pengumuman
 if (isset($_POST['tambahPengumuman'])) {
     $judul = $_POST['judulPengumuman'];
     $deskripsi = $_POST['deskripsiPengumuman'];
     $deskripsi = nl2br($deskripsi);
     $gambar = $_FILES['gambarPengumuman']['name'];
-    $tanggal = date('Y-m-d'); 
+    $tanggal = date('Y-m-d');
 
     $timestamp = time();
     $namaGambar = $timestamp . '_' . $gambar;
@@ -197,18 +195,19 @@ if (isset($_POST['tambahPengumuman'])) {
     $dir = "../assets/gambar/";
     $tmpFile = $_FILES['gambarPengumuman']['tmp_name'];
 
-    move_uploaded_file($tmpFile,
+    move_uploaded_file(
+        $tmpFile,
         $dir . $namaGambar
     );
 
-    $result = mysqli_query($koneksi, "INSERT INTO pengumuman (Judul, Deskripsi, gambar, tanggal) VALUES ('$judul','$deskripsi','$namaGambar', '$tanggal')");
+    $result = mysqli_query($koneksi, "INSERT INTO pengumuman (judul, deskripsi, gambar, tanggal) VALUES ('$judul','$deskripsi','$namaGambar', '$tanggal')");
 
     if ($result) {
         header("Location: pengumuman.php");
     }
 }
 
-// ^ Edite Pengumuman
+// Edite Pengumuman
 if (isset($_POST['ubahPengumuman'])) {
     $id = $_POST['id'];
     $judul = $_POST['judul'];
@@ -234,7 +233,7 @@ if (isset($_POST['ubahPengumuman'])) {
     }
 
 
-    $query = "UPDATE pengumuman SET Judul='$judul',Deskripsi='$deskripsi', gambar= '$namaGambar', tanggal= '$tanggal' WHERE id = '$id'";
+    $query = "UPDATE pengumuman SET judul='$judul',deskripsi='$deskripsi', gambar= '$namaGambar', tanggal= '$tanggal' WHERE id = '$id'";
     $sql = mysqli_query($koneksi, $query);
 
     if ($result) {
@@ -243,7 +242,7 @@ if (isset($_POST['ubahPengumuman'])) {
 }
 
 
-// ! Hapus Pengumuman
+// Hapus Pengumuman
 
 if (isset($_GET['hapusPengumuman'])) {
     $id = $_GET['hapusPengumuman'];
@@ -258,6 +257,3 @@ if (isset($_GET['hapusPengumuman'])) {
 
     if ($sql) header("Location: admin/pengumuman.php");
 }
-
-
-

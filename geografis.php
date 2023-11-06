@@ -23,15 +23,27 @@ include("template/user/navbar.php"); ?>
             <tbody>
                 <tr>
                     <td>Sebelah Utara</td>
-                    <td>Desa Sedau</td>
-                    <td>Narmada</td>
-                    <td>Lombok Barat</td>
+                    <td>Desa Tulo'a dan Bunu'o</td>
+                    <td>Bulango Utara</td>
+                    <td>Bone Bolango</td>
                 </tr>
                 <tr>
-                    <td>Sebelah Utara</td>
-                    <td>Desa Sedau</td>
-                    <td>Narmada</td>
-                    <td>Lombok Barat</td>
+                    <td>Sebelah Selatan</td>
+                    <td>Desa Boidu</td>
+                    <td>Bulango Utara</td>
+                    <td>Bone Bolango</td>
+                </tr>
+                <tr>
+                    <td>Sebelah Timur</td>
+                    <td>Desa Tulo'a dan Kopi</td>
+                    <td>Bulango Utara</td>
+                    <td>Bone Bolango</td>
+                </tr>
+                <tr>
+                    <td>Sebelah Barat</td>
+                    <td>Desa Boidu</td>
+                    <td>Bulango Utara</td>
+                    <td>Bone Bolango</td>
                 </tr>
             </tbody>
         </table>
@@ -56,14 +68,38 @@ include("template/user/navbar.php"); ?>
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>Sawah</td>
-                    <td>106,421</td>
+                    <td>Tanah Sawah</td>
+                    <td>0,00</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td>Sawah</td>
-                    <td>106,421</td>
+                    <td>2</td>
+                    <td>Tanah Kering</td>
+                    <td>81,50 </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Tanah Basah</td>
+                    <td>0,00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Tanah Perkebunan</td>
+                    <td>168,00 </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Fasilitas Umum</td>
+                    <td>50,00 </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Tanah Hutan</td>
+                    <td>0,00 </td>
                     <td></td>
                 </tr>
             </tbody>
