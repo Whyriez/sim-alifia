@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 04, 2023 at 02:36 AM
+-- Generation Time: Nov 06, 2023 at 02:05 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -35,14 +35,43 @@ CREATE TABLE `berita` (
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `berita`
+-- Table structure for table `pelayanan_surat`
 --
 
-INSERT INTO `berita` (`id`, `judul`, `deskripsi`, `gambar`, `tanggal`) VALUES
-(9, 'asasas', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. At optio quod dolorem veritatis, fugiat quam. Suscipit sed fugiat rem eaque eligendi, adipisci earum non omnis aspernatur quibusdam expedita numquam enim!', '1699061277_makanan2.jpg', '2023-11-04'),
-(10, 'asasas', ' Lorem ipsum dolor sit amet consectetur adipisicing elit. At optio quod dolorem veritatis, fugiat quam. Suscipit sed fugiat rem eaque eligendi, adipisci earum non omnis ', '1699061290_makanan3.jpg', '2023-11-04'),
-(11, 'asasasasas', ' Lorem ipsum dolor sit amet consectetur adipisicing elit. At optio quod dolorem veritatis, fugiat quam. Suscipit sed fugiat rem eaque eligendi, adipisci earum non omnis ', '1699061299_makanan5.jpg', '2023-11-04');
+CREATE TABLE `pelayanan_surat` (
+  `id` int NOT NULL,
+  `nama` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `nomor` varchar(23) NOT NULL,
+  `surat` varchar(50) DEFAULT NULL,
+  `kk` varchar(50) DEFAULT NULL,
+  `ktp` varchar(50) DEFAULT NULL,
+  `buku_nikah` varchar(50) DEFAULT NULL,
+  `other_ktp` varchar(50) DEFAULT NULL,
+  `ijasah` varchar(50) DEFAULT NULL,
+  `alamat` varchar(50) DEFAULT NULL,
+  `foto` varchar(50) DEFAULT NULL,
+  `rapor` varchar(50) DEFAULT NULL,
+  `other_surat` varchar(50) DEFAULT NULL,
+  `tanggal` date NOT NULL,
+  `jenis` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengumuman`
+--
+
+CREATE TABLE `pengumuman` (
+  `id` int NOT NULL,
+  `judul` varchar(100) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `gambar` varchar(100) NOT NULL,
+  `tanggal` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -58,14 +87,6 @@ CREATE TABLE `potensi_desa` (
   `gambar` varchar(150) NOT NULL,
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Dumping data for table `potensi_desa`
---
-
-INSERT INTO `potensi_desa` (`id`, `judul`, `deskripsi`, `kategori`, `gambar`, `tanggal`) VALUES
-(1, 'Buat Khuldi', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum inventore sequi labore iusto minus dolore quisquam sit nam quos rem, impedit velit quasi recusandae commodi repellendus obcaecati cupiditate laborum. Maxime, ut. Veritatis obcaecati quaerat labore laudantium pariatur incidunt. Explicabo, cumque veniam possimus fuga accusamus praesentium quae sint atque omnis enim, beatae eius. Ratione eaque minima eligendi recusandae ducimus sequi, obcaecati maxime repellendus, doloribus distinctio quis! Id veniam fuga deserunt quam sint, expedita alias exercitationem in! Labore incidunt tempore officia placeat dolor. Nobis autem nulla nisi voluptate, soluta laboriosam, vitae maxime animi maiores laborum rem ab harum culpa sit, dolore odit. Amet quibusdam quod, autem libero ad perspiciatis culpa velit temporibus sunt ipsa, animi reprehenderit eveniet! Sint nulla laborum hic non ipsa voluptates quasi. Voluptates soluta esse ducimus, delectus inventore at magnam ipsam unde provident perspiciatis. Saepe nam quis neque tempora. Obcaecati rerum at laboriosam similique a dolor corrupti, numquam iusto vel iste excepturi nisi consectetur nemo aliquid saepe commodi sequi delectus! Quidem dicta aliquam consequuntur tempore dolore quasi placeat tenetur dignissimos cum quis! Dolorum nam accusantium soluta voluptatum illum perspiciatis nobis qui necessitatibus atque inventore nisi deleniti aliquid natus voluptatibus dolorem, aspernatur dolor vero fugiat quia veritatis explicabo temporibus vel!', 'Buah Buahan', '1699063388_jus.jpg', '2023-11-04'),
-(2, 'Mie Sotong Khas Desa Tupa', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum inventore sequi labore iusto minus dolore quisquam sit nam quos rem, impedit velit quasi recusandae commodi repellendus obcaecati cupiditate laborum. Maxime, ut. Veritatis obcaecati quaerat labore laudantium pariatur incidunt. Explicabo, cumque veniam possimus fuga accusamus praesentium quae sint atque omnis enim, beatae eius. Ratione eaque minima eligendi recusandae ducimus sequi, obcaecati maxime repellendus, doloribus distinctio quis! Id veniam fuga deserunt quam sint, expedita alias exercitationem in! Labore incidunt tempore officia placeat dolor. Nobis autem nulla nisi voluptate, soluta laboriosam, vitae maxime animi maiores laborum rem ab harum culpa sit, dolore odit. Amet quibusdam quod, autem libero ad perspiciatis culpa velit temporibus sunt ipsa, animi reprehenderit eveniet! Sint nulla laborum hic non ipsa voluptates quasi. Voluptates soluta esse ducimus, delectus inventore at magnam ipsam unde provident perspiciatis. Saepe nam quis neque tempora. Obcaecati rerum at laboriosam similique a dolor corrupti, numquam iusto vel iste excepturi nisi consectetur nemo aliquid saepe commodi sequi delectus! Quidem dicta aliquam consequuntur tempore dolore quasi placeat tenetur dignissimos cum quis! Dolorum nam accusantium soluta voluptatum illum perspiciatis nobis qui necessitatibus atque inventore nisi deleniti aliquid natus voluptatibus dolorem, aspernatur dolor vero fugiat quia veritatis explicabo temporibus vel!', 'Makanan', '1699063430_makanan3.jpg', '2023-11-04');
 
 -- --------------------------------------------------------
 
@@ -98,6 +119,18 @@ ALTER TABLE `berita`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pelayanan_surat`
+--
+ALTER TABLE `pelayanan_surat`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pengumuman`
+--
+ALTER TABLE `pengumuman`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `potensi_desa`
 --
 ALTER TABLE `potensi_desa`
@@ -118,6 +151,18 @@ ALTER TABLE `users`
 --
 ALTER TABLE `berita`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `pelayanan_surat`
+--
+ALTER TABLE `pelayanan_surat`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `pengumuman`
+--
+ALTER TABLE `pengumuman`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `potensi_desa`
