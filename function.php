@@ -182,3 +182,82 @@ if (isset($_GET['hapusPotensi'])) {
 
     if ($sql) header("Location: admin/potensiDesa.php");
 }
+
+// ? Tambah Data Pengumuman
+if (isset($_POST['tambahPengumuman'])) {
+    $judul = $_POST['judulPengumuman'];
+    $deskripsi = $_POST['deskripsiPengumuman'];
+    $deskripsi = nl2br($deskripsi);
+    $gambar = $_FILES['gambarPengumuman']['name'];
+    $tanggal = date('Y-m-d'); 
+
+    $timestamp = time();
+    $namaGambar = $timestamp . '_' . $gambar;
+
+    $dir = "../assets/gambar/";
+    $tmpFile = $_FILES['gambarPengumuman']['tmp_name'];
+
+    move_uploaded_file($tmpFile,
+        $dir . $namaGambar
+    );
+
+    $result = mysqli_query($koneksi, "INSERT INTO pengumuman (Judul, Deskripsi, gambar, tanggal) VALUES ('$judul','$deskripsi','$namaGambar', '$tanggal')");
+
+    if ($result) {
+        header("Location: pengumuman.php");
+    }
+}
+
+// ^ Edite Pengumuman
+if (isset($_POST['ubahPengumuman'])) {
+    $id = $_POST['id'];
+    $judul = $_POST['judul'];
+    $deskripsi = $_POST['deskripsi'];
+    $deskripsi = nl2br($deskripsi);
+    $gambar = $_FILES['gambar']['name'];
+    $tanggal = date('Y-m-d');
+
+    $queryShow = "SELECT * FROM pengumuman WHERE id = '$id'";
+    $sqlShow = mysqli_query($koneksi, $queryShow);
+    $result = mysqli_fetch_assoc($sqlShow);
+
+
+
+    if ($_FILES['gambar']['name'] == "") {
+        $namaGambar = $result['gambar'];
+    } else {
+        $gambar = $_FILES['gambar']['name'];
+        unlink("../assets/gambar/" . $result['gambar']);
+        $timestamp = time();
+        $namaGambar = $timestamp . '_' . $gambar;
+        move_uploaded_file($_FILES['gambar']['tmp_name'], "../assets/gambar/" . $namaGambar);
+    }
+
+
+    $query = "UPDATE pengumuman SET Judul='$judul',Deskripsi='$deskripsi', gambar= '$namaGambar', tanggal= '$tanggal' WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($result) {
+        header("Location: pengumuman    .php");
+    }
+}
+
+
+// ! Hapus Pengumuman
+
+if (isset($_GET['hapusPengumuman'])) {
+    $id = $_GET['hapusPengumuman'];
+    $queryShow = "SELECT * FROM pengumuman WHERE id = '$id'";
+    $sqlShow = mysqli_query($koneksi, $queryShow);
+    $result = mysqli_fetch_assoc($sqlShow);
+
+    unlink("assets/gambar/" . $result['gambar']);
+
+    $query = "DELETE FROM pengumuman WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($sql) header("Location: admin/pengumuman.php");
+}
+
+
+

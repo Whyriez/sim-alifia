@@ -30,6 +30,11 @@
             <span>Berita</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="pengumuman.php">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Pengumuman</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="potensiDesa.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Potensi Desa</span></a>
