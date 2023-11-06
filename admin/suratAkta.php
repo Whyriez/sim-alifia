@@ -7,7 +7,7 @@ include('../template/admin/sidebar.php');
     <div id="content">
         <?php include('../template/admin/navbar.php') ?>
         <div class="container-fluid">
-            <h1 class="h3 mb-2 text-gray-800">Data Surat Kartu Keluarga</h1>
+            <h1 class="h3 mb-2 text-gray-800">Data Surat Akta Kelahiran</h1>
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center py-3">

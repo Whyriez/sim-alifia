@@ -19,7 +19,6 @@ include("template/user/navbar.php");
                         <img src="assets/gambar/<?= $a['gambar'] ?>" alt="Gambar" class="img-fluid w-25 mr-3">
 
                         <div style="margin-left: 1.25rem;">
-                            </svg>
                             <h5 class="text-primary mb-1" style="font-size: 18px; font-weight:bold;"> <a style="text-decoration: none;" href="detail.php?pengumuman=<?= $a['id'] ?>"><?= $a['judul'] ?></a></h5>
                             <i class=" fa fa-calendar text-primary" aria-hidden="true" style="font-size: 14px;"></i>
                             <i class="text-primary " style="font-size: 14px;"><?= $a['tanggal'] ?></h3></i>

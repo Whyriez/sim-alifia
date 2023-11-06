@@ -66,19 +66,26 @@ require('function.php');
                 <h2 class="text-left text-primary mb-2">Pengunguman</h2>
                 <div class="border-bottom border-primary border-1 mb-3"></div>
 
-                <div class="card" style="border-color: blue;">
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        <div class="fw-bold text-start text-uppercase">Oplas Awet Muda</div>
-                    </button>
+                <?php $loop = mysqli_query($koneksi, "select * from pengumuman ORDER BY tanggal DESC LIMIT 2");
 
-                    <div class="collapse" id="collapseExample">
-                        <div class="card-body">
-                            Some placeholder content for the collapse component. This panel is hidden by default but
-                            revealed when
-                            the user activates the relevant trigger.
+                while ($a = mysqli_fetch_array($loop)) { ?>
+                    <div class="card mb-2" style="border-color: blue;">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<?= $a['id'] ?>" aria-expanded="false" aria-controls="collapseExample">
+                            <div class="fw-bold text-start text-uppercase"><?= $a['judul'] ?></div>
+                        </button>
+
+                        <div class="collapse" id="collapseExample<?= $a['id'] ?>">
+                            <div class="card-body">
+                                <i class=" fa fa-calendar text-primary" aria-hidden="true" style="font-size: 14px;"></i>
+                                <i class="text-primary " style="font-size: 14px;"><?= $a['tanggal'] ?></h3></i>
+                                <i class="fa fa-user text-primary ms-2" aria-hidden=" true" style="font-size: 14px;"></i>
+                                <i class="text-primary" style=" font-size: 14px;">Admin Desa Keru</i> <br>
+                                <?= substr($a['deskripsi'], 0, 200); ?> <a href="detail.php?pengumuman=<?= $a['id'] ?>" style="font-size: 11px; font-weight: 500; padding: 3px 8px; " class=" btn btn-primary"> selengkapnya <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                <?php } ?>
 
                 <div class=" mt-3">
                     <h2 class="text-left text-primary mb-2">Agenda Kegiatan</h2>
