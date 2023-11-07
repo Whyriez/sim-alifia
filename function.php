@@ -272,34 +272,40 @@ if (isset($_POST['kirimSuratPindahPenduduk'])) {
     $alamat1 = $_POST['alamat1'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarsuratPernyataan1 = $timestamp . '_' . uniqid() . '_' . $suratPernyataan1;
-    $namaGambarkk1 = $timestamp . '_' . uniqid() . '_' . $kk1;
-    $namaGambarktp1 = $timestamp . '_' . uniqid() . '_' . $ktp1;
-    $namaGambarbukuNikah1 = $timestamp . '_' . uniqid() . '_' . $bukuNikah1;
-    $namaGambarselfieKtp1 = $timestamp . '_' . uniqid() . '_' . $selfieKtp1;
-    $namaGambarijasah1 = $timestamp . '_' . uniqid() . '_' . $ijasah1;
+    if (empty($nama1) || empty($nomor1) || empty($alamat1) || empty($suratPernyataan1) || empty($kk1) || empty($ktp1) || empty($bukuNikah1) || empty($selfieKtp1) || empty($ijasah1)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
+        $timestamp = time();
+        $namaGambarsuratPernyataan1 = $timestamp . '_' . uniqid() . '_' . $suratPernyataan1;
+        $namaGambarkk1 = $timestamp . '_' . uniqid() . '_' . $kk1;
+        $namaGambarktp1 = $timestamp . '_' . uniqid() . '_' . $ktp1;
+        $namaGambarbukuNikah1 = $timestamp . '_' . uniqid() . '_' . $bukuNikah1;
+        $namaGambarselfieKtp1 = $timestamp . '_' . uniqid() . '_' . $selfieKtp1;
+        $namaGambarijasah1 = $timestamp . '_' . uniqid() . '_' . $ijasah1;
 
 
-    $dir = "assets/dokumen/";
-    $tmpFilesuratPernyataan1 = $_FILES['suratPernyataan1']['tmp_name'];
-    $tmpFilekk1 = $_FILES['kk1']['tmp_name'];
-    $tmpFilektp1 = $_FILES['ktp1']['tmp_name'];
-    $tmpFilebukuNikah1 = $_FILES['bukuNikah1']['tmp_name'];
-    $tmpFileselfieKtp1 = $_FILES['selfieKtp1']['tmp_name'];
-    $tmpFileijasah1 = $_FILES['ijasah1']['tmp_name'];
+        $dir = "assets/dokumen/";
+        $tmpFilesuratPernyataan1 = $_FILES['suratPernyataan1']['tmp_name'];
+        $tmpFilekk1 = $_FILES['kk1']['tmp_name'];
+        $tmpFilektp1 = $_FILES['ktp1']['tmp_name'];
+        $tmpFilebukuNikah1 = $_FILES['bukuNikah1']['tmp_name'];
+        $tmpFileselfieKtp1 = $_FILES['selfieKtp1']['tmp_name'];
+        $tmpFileijasah1 = $_FILES['ijasah1']['tmp_name'];
 
-    move_uploaded_file($tmpFilesuratPernyataan1, $dir . $namaGambarsuratPernyataan1);
-    move_uploaded_file($tmpFilekk1, $dir . $namaGambarkk1);
-    move_uploaded_file($tmpFilektp1, $dir . $namaGambarktp1);
-    move_uploaded_file($tmpFilebukuNikah1, $dir . $namaGambarbukuNikah1);
-    move_uploaded_file($tmpFileselfieKtp1, $dir . $namaGambarselfieKtp1);
-    move_uploaded_file($tmpFileijasah1, $dir . $namaGambarijasah1);
+        move_uploaded_file($tmpFilesuratPernyataan1, $dir . $namaGambarsuratPernyataan1);
+        move_uploaded_file($tmpFilekk1, $dir . $namaGambarkk1);
+        move_uploaded_file($tmpFilektp1, $dir . $namaGambarktp1);
+        move_uploaded_file($tmpFilebukuNikah1, $dir . $namaGambarbukuNikah1);
+        move_uploaded_file($tmpFileselfieKtp1, $dir . $namaGambarselfieKtp1);
+        move_uploaded_file($tmpFileijasah1, $dir . $namaGambarijasah1);
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, buku_nikah,foto, ijasah, alamat, tanggal, jenis) VALUES ('$nama1', '$nomor1', '$namaGambarsuratPernyataan1','$namaGambarkk1','$namaGambarktp1', '$namaGambarbukuNikah1','$namaGambarselfieKtp1','$namaGambarijasah1','$alamat1', '$tanggal', 1)");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, buku_nikah,foto, ijasah, alamat, tanggal, jenis) VALUES ('$nama1', '$nomor1', '$namaGambarsuratPernyataan1','$namaGambarkk1','$namaGambarktp1', '$namaGambarbukuNikah1','$namaGambarselfieKtp1','$namaGambarijasah1','$alamat1', '$tanggal', 1)");
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 
@@ -313,32 +319,39 @@ if (isset($_POST['SuratPengantarNikah'])) {
     $ijasah2 = $_FILES['ijasah2']['name'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarkk2 = $timestamp . '_' . uniqid() . '_' . $kk2;
-    $namaGambarktp2 = $timestamp . '_' . uniqid() . '_' . $ktp2;
-    $namaGambarbukuNikah2 = $timestamp . '_' . uniqid() . '_' . $bukuNikah2;
-    $namaGambarpasFoto2 = $timestamp . '_' . uniqid() . '_' . $pasFoto2;
-    $namaGambarijasah2 = $timestamp . '_' . uniqid() . '_' . $ijasah2;
+    if (empty($nama2) || empty($nomor2) || empty($kk2) || empty($ktp2) || empty($bukuNikah2) || empty($pasFoto2) || empty($ijasah2) || empty($ijasah2)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
+
+        $timestamp = time();
+        $namaGambarkk2 = $timestamp . '_' . uniqid() . '_' . $kk2;
+        $namaGambarktp2 = $timestamp . '_' . uniqid() . '_' . $ktp2;
+        $namaGambarbukuNikah2 = $timestamp . '_' . uniqid() . '_' . $bukuNikah2;
+        $namaGambarpasFoto2 = $timestamp . '_' . uniqid() . '_' . $pasFoto2;
+        $namaGambarijasah2 = $timestamp . '_' . uniqid() . '_' . $ijasah2;
 
 
-    $dir = "assets/dokumen/";
-    $tmpFilesuratPernyataan1 = $_FILES['suratPernyataan1']['tmp_name'];
-    $tmpFilekk2 = $_FILES['kk2']['tmp_name'];
-    $tmpFilektp2 = $_FILES['ktp2']['tmp_name'];
-    $tmpFilebukuNikah2 = $_FILES['bukuNikah2']['tmp_name'];
-    $tmpFilepasFoto2 = $_FILES['pasFoto2']['tmp_name'];
-    $tmpFileijasah2 = $_FILES['ijasah2']['tmp_name'];
+        $dir = "assets/dokumen/";
+        $tmpFilesuratPernyataan1 = $_FILES['suratPernyataan1']['tmp_name'];
+        $tmpFilekk2 = $_FILES['kk2']['tmp_name'];
+        $tmpFilektp2 = $_FILES['ktp2']['tmp_name'];
+        $tmpFilebukuNikah2 = $_FILES['bukuNikah2']['tmp_name'];
+        $tmpFilepasFoto2 = $_FILES['pasFoto2']['tmp_name'];
+        $tmpFileijasah2 = $_FILES['ijasah2']['tmp_name'];
 
-    move_uploaded_file($tmpFilekk2, $dir . $namaGambarkk2);
-    move_uploaded_file($tmpFilektp2, $dir . $namaGambarktp2);
-    move_uploaded_file($tmpFilebukuNikah2, $dir . $namaGambarbukuNikah2);
-    move_uploaded_file($tmpFilepasFoto2, $dir . $namaGambarpasFoto2);
-    move_uploaded_file($tmpFileijasah2, $dir . $namaGambarijasah2);
+        move_uploaded_file($tmpFilekk2, $dir . $namaGambarkk2);
+        move_uploaded_file($tmpFilektp2, $dir . $namaGambarktp2);
+        move_uploaded_file($tmpFilebukuNikah2, $dir . $namaGambarbukuNikah2);
+        move_uploaded_file($tmpFilepasFoto2, $dir . $namaGambarpasFoto2);
+        move_uploaded_file($tmpFileijasah2, $dir . $namaGambarijasah2);
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, kk, ktp, buku_nikah,foto, ijasah, tanggal, jenis) VALUES ('$nama2','$nomor2', '$namaGambarkk2','$namaGambarktp2', '$namaGambarbukuNikah2','$namaGambarpasFoto2','$namaGambarijasah2', '$tanggal', 2)");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, kk, ktp, buku_nikah,foto, ijasah, tanggal, jenis) VALUES ('$nama2','$nomor2', '$namaGambarkk2','$namaGambarktp2', '$namaGambarbukuNikah2','$namaGambarpasFoto2','$namaGambarijasah2', '$tanggal', 2)");
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 
@@ -351,28 +364,35 @@ if (isset($_POST['SuratKeteranganMeninggal'])) {
     $ktp3other = $_FILES['ktp3other']['name'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarsuketRumahSakit = $timestamp . '_' . uniqid() . '_' . $suketRumahSakit;
-    $namaGambarkk3 = $timestamp . '_' . uniqid() . '_' . $kk3;
-    $namaGambarktp3 = $timestamp . '_' . uniqid() . '_' . $ktp3;
-    $namaGambarktp3other = $timestamp . '_' . uniqid() . '_' . $ktp3other;
+    if (empty($nama3) || empty($nomor3) || empty($suketRumahSakit) || empty($kk3) || empty($ktp3) || empty($ktp3other)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
+
+        $timestamp = time();
+        $namaGambarsuketRumahSakit = $timestamp . '_' . uniqid() . '_' . $suketRumahSakit;
+        $namaGambarkk3 = $timestamp . '_' . uniqid() . '_' . $kk3;
+        $namaGambarktp3 = $timestamp . '_' . uniqid() . '_' . $ktp3;
+        $namaGambarktp3other = $timestamp . '_' . uniqid() . '_' . $ktp3other;
 
 
-    $dir = "assets/dokumen/";
-    $tmpFilesuketRumahSakit = $_FILES['suketRumahSakit']['tmp_name'];
-    $tmpFilekk3 = $_FILES['kk3']['tmp_name'];
-    $tmpFilektp3 = $_FILES['ktp3']['tmp_name'];
-    $tmpFilektp3other = $_FILES['ktp3other']['tmp_name'];
+        $dir = "assets/dokumen/";
+        $tmpFilesuketRumahSakit = $_FILES['suketRumahSakit']['tmp_name'];
+        $tmpFilekk3 = $_FILES['kk3']['tmp_name'];
+        $tmpFilektp3 = $_FILES['ktp3']['tmp_name'];
+        $tmpFilektp3other = $_FILES['ktp3other']['tmp_name'];
 
-    move_uploaded_file($tmpFilesuketRumahSakit, $dir . $namaGambarsuketRumahSakit);
-    move_uploaded_file($tmpFilekk3, $dir . $namaGambarkk3);
-    move_uploaded_file($tmpFilektp3, $dir . $namaGambarktp3);
-    move_uploaded_file($tmpFilektp3other, $dir . $namaGambarktp3other);
+        move_uploaded_file($tmpFilesuketRumahSakit, $dir . $namaGambarsuketRumahSakit);
+        move_uploaded_file($tmpFilekk3, $dir . $namaGambarkk3);
+        move_uploaded_file($tmpFilektp3, $dir . $namaGambarktp3);
+        move_uploaded_file($tmpFilektp3other, $dir . $namaGambarktp3other);
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, other_ktp, tanggal, jenis) VALUES ('$nama3', '$nomor3','$namaGambarsuketRumahSakit', '$namaGambarkk3','$namaGambarktp3', '$namaGambarktp3other', '$tanggal', 3)");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, other_ktp, tanggal, jenis) VALUES ('$nama3', '$nomor3','$namaGambarsuketRumahSakit', '$namaGambarkk3','$namaGambarktp3', '$namaGambarktp3other', '$tanggal', 3)");
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 
@@ -385,28 +405,35 @@ if (isset($_POST['SuratAhliWaris'])) {
     $ktp4Pemohon = $_FILES['ktp4Pemohon']['name'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarsuketMeninggalDunia = $timestamp . '_' . uniqid() . '_' . $suketMeninggalDunia;
-    $namaGambarkk4AhliWaris = $timestamp . '_' . uniqid() . '_' . $kk4AhliWaris;
-    $namaGambarktp4AhliWaris = $timestamp . '_' . uniqid() . '_' . $ktp4AhliWaris;
-    $namaGambarktp4Pemohon = $timestamp . '_' . uniqid() . '_' . $ktp4Pemohon;
+    if (empty($nama4) || empty($nomor4) || empty($suketMeninggalDunia) || empty($kk4AhliWaris) || empty($ktp4AhliWaris) || empty($ktp4Pemohon)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
+
+        $timestamp = time();
+        $namaGambarsuketMeninggalDunia = $timestamp . '_' . uniqid() . '_' . $suketMeninggalDunia;
+        $namaGambarkk4AhliWaris = $timestamp . '_' . uniqid() . '_' . $kk4AhliWaris;
+        $namaGambarktp4AhliWaris = $timestamp . '_' . uniqid() . '_' . $ktp4AhliWaris;
+        $namaGambarktp4Pemohon = $timestamp . '_' . uniqid() . '_' . $ktp4Pemohon;
 
 
-    $dir = "assets/dokumen/";
-    $tmpFilesuketMeninggalDunia = $_FILES['suketMeninggalDunia']['tmp_name'];
-    $tmpFilekk4AhliWaris = $_FILES['kk4AhliWaris']['tmp_name'];
-    $tmpFilektp4AhliWaris = $_FILES['ktp4AhliWaris']['tmp_name'];
-    $tmpFilektp4Pemohon = $_FILES['ktp4Pemohon']['tmp_name'];
+        $dir = "assets/dokumen/";
+        $tmpFilesuketMeninggalDunia = $_FILES['suketMeninggalDunia']['tmp_name'];
+        $tmpFilekk4AhliWaris = $_FILES['kk4AhliWaris']['tmp_name'];
+        $tmpFilektp4AhliWaris = $_FILES['ktp4AhliWaris']['tmp_name'];
+        $tmpFilektp4Pemohon = $_FILES['ktp4Pemohon']['tmp_name'];
 
-    move_uploaded_file($tmpFilesuketMeninggalDunia, $dir . $namaGambarsuketMeninggalDunia);
-    move_uploaded_file($tmpFilekk4AhliWaris, $dir . $namaGambarkk4AhliWaris);
-    move_uploaded_file($tmpFilektp4AhliWaris, $dir . $namaGambarktp4AhliWaris);
-    move_uploaded_file($tmpFilektp4Pemohon, $dir . $namaGambarktp4Pemohon);
+        move_uploaded_file($tmpFilesuketMeninggalDunia, $dir . $namaGambarsuketMeninggalDunia);
+        move_uploaded_file($tmpFilekk4AhliWaris, $dir . $namaGambarkk4AhliWaris);
+        move_uploaded_file($tmpFilektp4AhliWaris, $dir . $namaGambarktp4AhliWaris);
+        move_uploaded_file($tmpFilektp4Pemohon, $dir . $namaGambarktp4Pemohon);
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, other_ktp, tanggal, jenis) VALUES ('$nama4', '$nomor4','$namaGambarsuketMeninggalDunia', '$namaGambarkk4AhliWaris','$namaGambarktp4AhliWaris', '$namaGambarktp4Pemohon', '$tanggal', 4)");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, other_ktp, tanggal, jenis) VALUES ('$nama4', '$nomor4','$namaGambarsuketMeninggalDunia', '$namaGambarkk4AhliWaris','$namaGambarktp4AhliWaris', '$namaGambarktp4Pemohon', '$tanggal', 4)");
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 
@@ -419,28 +446,35 @@ if (isset($_POST['SuratKelahiran'])) {
     $bukuNikah5 = $_FILES['bukuNikah5']['name'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarsuratKelahiran = $timestamp . '_' . uniqid() . '_' . $suratKelahiran;
-    $namaGambarkk5 = $timestamp . '_' . uniqid() . '_' . $kk5;
-    $namaGambarktp5 = $timestamp . '_' . uniqid() . '_' . $ktp5;
-    $namaGambarbukuNikah5 = $timestamp . '_' . uniqid() . '_' . $bukuNikah5;
+    if (empty($nama5) || empty($nomor5) || empty($suratKelahiran) || empty($kk5) || empty($ktp5) || empty($bukuNikah5)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
+
+        $timestamp = time();
+        $namaGambarsuratKelahiran = $timestamp . '_' . uniqid() . '_' . $suratKelahiran;
+        $namaGambarkk5 = $timestamp . '_' . uniqid() . '_' . $kk5;
+        $namaGambarktp5 = $timestamp . '_' . uniqid() . '_' . $ktp5;
+        $namaGambarbukuNikah5 = $timestamp . '_' . uniqid() . '_' . $bukuNikah5;
 
 
-    $dir = "assets/dokumen/";
-    $tmpFilesuratKelahiran = $_FILES['suratKelahiran']['tmp_name'];
-    $tmpFilekk5 = $_FILES['kk5']['tmp_name'];
-    $tmpFilektp5 = $_FILES['ktp5']['tmp_name'];
-    $tmpFilebukuNikah5 = $_FILES['bukuNikah5']['tmp_name'];
+        $dir = "assets/dokumen/";
+        $tmpFilesuratKelahiran = $_FILES['suratKelahiran']['tmp_name'];
+        $tmpFilekk5 = $_FILES['kk5']['tmp_name'];
+        $tmpFilektp5 = $_FILES['ktp5']['tmp_name'];
+        $tmpFilebukuNikah5 = $_FILES['bukuNikah5']['tmp_name'];
 
-    move_uploaded_file($tmpFilesuratKelahiran, $dir . $namaGambarsuratKelahiran);
-    move_uploaded_file($tmpFilekk5, $dir . $namaGambarkk5);
-    move_uploaded_file($tmpFilektp5, $dir . $namaGambarktp5);
-    move_uploaded_file($tmpFilebukuNikah5, $dir . $namaGambarbukuNikah5);
+        move_uploaded_file($tmpFilesuratKelahiran, $dir . $namaGambarsuratKelahiran);
+        move_uploaded_file($tmpFilekk5, $dir . $namaGambarkk5);
+        move_uploaded_file($tmpFilektp5, $dir . $namaGambarktp5);
+        move_uploaded_file($tmpFilebukuNikah5, $dir . $namaGambarbukuNikah5);
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor,surat, kk, ktp, buku_nikah, tanggal, jenis) VALUES ('$nama5','$nomor5','$namaGambarsuratKelahiran', '$namaGambarkk5','$namaGambarktp5', '$namaGambarbukuNikah5', '$tanggal', 5)");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor,surat, kk, ktp, buku_nikah, tanggal, jenis) VALUES ('$nama5','$nomor5','$namaGambarsuratKelahiran', '$namaGambarkk5','$namaGambarktp5', '$namaGambarbukuNikah5', '$tanggal', 5)");
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 
@@ -451,21 +485,28 @@ if (isset($_POST['SuratKeteranganTanah'])) {
     $ktp6 = $_FILES['ktp6']['name'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarbuktiKepemilikanTanah = $timestamp . '_' . uniqid() . '_' . $buktiKepemilikanTanah;
-    $namaGambarktp6 = $timestamp . '_' . uniqid() . '_' . $ktp6;
+    if (empty($nama6) || empty($nomor6) || empty($buktiKepemilikanTanah) || empty($ktp6)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
 
-    $dir = "assets/dokumen/";
-    $tmpFilebuktiKepemilikanTanah = $_FILES['buktiKepemilikanTanah']['tmp_name'];
-    $tmpFilektp6 = $_FILES['ktp6']['tmp_name'];
+        $timestamp = time();
+        $namaGambarbuktiKepemilikanTanah = $timestamp . '_' . uniqid() . '_' . $buktiKepemilikanTanah;
+        $namaGambarktp6 = $timestamp . '_' . uniqid() . '_' . $ktp6;
 
-    move_uploaded_file($tmpFilebuktiKepemilikanTanah, $dir . $namaGambarbuktiKepemilikanTanah);
-    move_uploaded_file($tmpFilektp6, $dir . $namaGambarktp6);
+        $dir = "assets/dokumen/";
+        $tmpFilebuktiKepemilikanTanah = $_FILES['buktiKepemilikanTanah']['tmp_name'];
+        $tmpFilektp6 = $_FILES['ktp6']['tmp_name'];
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, ktp, tanggal, jenis) VALUES ('$nama6','$nomor6', '$namaGambarbuktiKepemilikanTanah','$namaGambarktp6', '$tanggal', 6)");
+        move_uploaded_file($tmpFilebuktiKepemilikanTanah, $dir . $namaGambarbuktiKepemilikanTanah);
+        move_uploaded_file($tmpFilektp6, $dir . $namaGambarktp6);
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, ktp, tanggal, jenis) VALUES ('$nama6','$nomor6', '$namaGambarbuktiKepemilikanTanah','$namaGambarktp6', '$tanggal', 6)");
+
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 
@@ -478,28 +519,35 @@ if (isset($_POST['SuratKartuKeluarga'])) {
     $ijasah7 = $_FILES['ijasah7']['name'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarakta7 = $timestamp . '_' . uniqid() . '_' . $akta7;
-    $namaGambarbukuNikah7 = $timestamp . '_' . uniqid() . '_' . $bukuNikah7;
-    $namaGambarrapor7 = $timestamp . '_' . uniqid() . '_' . $rapor7;
-    $namaGambarijasah7 = $timestamp . '_' . uniqid() . '_' . $ijasah7;
+    if (empty($nama7) || empty($nomor7) || empty($akta7) || empty($bukuNikah7) || empty($rapor7) || empty($ijasah7)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
+
+        $timestamp = time();
+        $namaGambarakta7 = $timestamp . '_' . uniqid() . '_' . $akta7;
+        $namaGambarbukuNikah7 = $timestamp . '_' . uniqid() . '_' . $bukuNikah7;
+        $namaGambarrapor7 = $timestamp . '_' . uniqid() . '_' . $rapor7;
+        $namaGambarijasah7 = $timestamp . '_' . uniqid() . '_' . $ijasah7;
 
 
-    $dir = "assets/dokumen/";
-    $tmpFileakta7 = $_FILES['akta7']['tmp_name'];
-    $tmpFilebukuNikah7 = $_FILES['bukuNikah7']['tmp_name'];
-    $tmpFilerapor7 = $_FILES['rapor7']['tmp_name'];
-    $tmpFileijasah7 = $_FILES['ijasah7']['tmp_name'];
+        $dir = "assets/dokumen/";
+        $tmpFileakta7 = $_FILES['akta7']['tmp_name'];
+        $tmpFilebukuNikah7 = $_FILES['bukuNikah7']['tmp_name'];
+        $tmpFilerapor7 = $_FILES['rapor7']['tmp_name'];
+        $tmpFileijasah7 = $_FILES['ijasah7']['tmp_name'];
 
-    move_uploaded_file($tmpFileakta7, $dir . $namaGambarakta7);
-    move_uploaded_file($tmpFilebukuNikah7, $dir . $namaGambarbukuNikah7);
-    move_uploaded_file($tmpFilerapor7, $dir . $namaGambarrapor7);
-    move_uploaded_file($tmpFileijasah7, $dir . $namaGambarijasah7);
+        move_uploaded_file($tmpFileakta7, $dir . $namaGambarakta7);
+        move_uploaded_file($tmpFilebukuNikah7, $dir . $namaGambarbukuNikah7);
+        move_uploaded_file($tmpFilerapor7, $dir . $namaGambarrapor7);
+        move_uploaded_file($tmpFileijasah7, $dir . $namaGambarijasah7);
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, buku_nikah, rapor, ijasah, tanggal, jenis) VALUES ('$nama7','$nomor7','$namaGambarakta7', '$namaGambarbukuNikah7','$namaGambarrapor7', '$namaGambarijasah7', '$tanggal', 7)");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, buku_nikah, rapor, ijasah, tanggal, jenis) VALUES ('$nama7','$nomor7','$namaGambarakta7', '$namaGambarbukuNikah7','$namaGambarrapor7', '$namaGambarijasah7', '$tanggal', 7)");
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 
@@ -514,34 +562,41 @@ if (isset($_POST['SuratAktaKelahiran'])) {
     $ijasah8 = $_FILES['ijasah8']['name'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarsuketLahir = $timestamp . '_' . uniqid() . '_' . $suketLahir;
-    $namaGambarkk8 = $timestamp . '_' . uniqid() . '_' . $kk8;
-    $namaGambarktp8 = $timestamp . '_' . uniqid() . '_' . $ktp8;
-    $namaGambarktp8Saksi = $timestamp . '_' . uniqid() . '_' . $ktp8Saksi;
-    $namaGambarbukuNikah8 = $timestamp . '_' . uniqid() . '_' . $bukuNikah8;
-    $namaGambarijasah8 = $timestamp . '_' . uniqid() . '_' . $ijasah8;
+    if (empty($nama8) || empty($nomor8) || empty($suketLahir) || empty($kk8) || empty($ktp8) || empty($ktp8Saksi) || empty($bukuNikah8) || empty($ijasah8)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
+
+        $timestamp = time();
+        $namaGambarsuketLahir = $timestamp . '_' . uniqid() . '_' . $suketLahir;
+        $namaGambarkk8 = $timestamp . '_' . uniqid() . '_' . $kk8;
+        $namaGambarktp8 = $timestamp . '_' . uniqid() . '_' . $ktp8;
+        $namaGambarktp8Saksi = $timestamp . '_' . uniqid() . '_' . $ktp8Saksi;
+        $namaGambarbukuNikah8 = $timestamp . '_' . uniqid() . '_' . $bukuNikah8;
+        $namaGambarijasah8 = $timestamp . '_' . uniqid() . '_' . $ijasah8;
 
 
-    $dir = "assets/dokumen/";
-    $tmpFilesuketLahir = $_FILES['suketLahir']['tmp_name'];
-    $tmpFilekk8 = $_FILES['kk8']['tmp_name'];
-    $tmpFilektp8 = $_FILES['ktp8']['tmp_name'];
-    $tmpFilektp8Saksi = $_FILES['ktp8Saksi']['tmp_name'];
-    $tmpFilebukuNikah8 = $_FILES['bukuNikah8']['tmp_name'];
-    $tmpFileijasah8 = $_FILES['ijasah8']['tmp_name'];
+        $dir = "assets/dokumen/";
+        $tmpFilesuketLahir = $_FILES['suketLahir']['tmp_name'];
+        $tmpFilekk8 = $_FILES['kk8']['tmp_name'];
+        $tmpFilektp8 = $_FILES['ktp8']['tmp_name'];
+        $tmpFilektp8Saksi = $_FILES['ktp8Saksi']['tmp_name'];
+        $tmpFilebukuNikah8 = $_FILES['bukuNikah8']['tmp_name'];
+        $tmpFileijasah8 = $_FILES['ijasah8']['tmp_name'];
 
-    move_uploaded_file($tmpFilesuketLahir, $dir . $namaGambarsuketLahir);
-    move_uploaded_file($tmpFilekk8, $dir . $namaGambarkk8);
-    move_uploaded_file($tmpFilektp8, $dir . $namaGambarktp8);
-    move_uploaded_file($tmpFilektp8Saksi, $dir . $namaGambarktp8Saksi);
-    move_uploaded_file($tmpFilebukuNikah8, $dir . $namaGambarbukuNikah8);
-    move_uploaded_file($tmpFileijasah8, $dir . $namaGambarijasah8);
+        move_uploaded_file($tmpFilesuketLahir, $dir . $namaGambarsuketLahir);
+        move_uploaded_file($tmpFilekk8, $dir . $namaGambarkk8);
+        move_uploaded_file($tmpFilektp8, $dir . $namaGambarktp8);
+        move_uploaded_file($tmpFilektp8Saksi, $dir . $namaGambarktp8Saksi);
+        move_uploaded_file($tmpFilebukuNikah8, $dir . $namaGambarbukuNikah8);
+        move_uploaded_file($tmpFileijasah8, $dir . $namaGambarijasah8);
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, other_ktp, buku_nikah, ijasah, tanggal, jenis) VALUES ('$nama8','$nomor8','$namaGambarsuketLahir', '$namaGambarkk8','$namaGambarktp8', '$namaGambarktp8Saksi', '$namaGambarbukuNikah8', '$namaGambarijasah8', '$tanggal', 8)");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, other_ktp, buku_nikah, ijasah, tanggal, jenis) VALUES ('$nama8','$nomor8','$namaGambarsuketLahir', '$namaGambarkk8','$namaGambarktp8', '$namaGambarktp8Saksi', '$namaGambarbukuNikah8', '$namaGambarijasah8', '$tanggal', 8)");
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 
@@ -553,25 +608,32 @@ if (isset($_POST['SuketTidakMampu'])) {
     $ktp9 = $_FILES['ktp9']['name'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarsuratPernyataan = $timestamp . '_' . uniqid() . '_' . $suratPernyataan;
-    $namaGambarkk9 = $timestamp . '_' . uniqid() . '_' . $kk9;
-    $namaGambarktp9 = $timestamp . '_' . uniqid() . '_' . $ktp9;
+    if (empty($nama9) || empty($nomor9) || empty($suratPernyataan) || empty($kk9) || empty($ktp9)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
+
+        $timestamp = time();
+        $namaGambarsuratPernyataan = $timestamp . '_' . uniqid() . '_' . $suratPernyataan;
+        $namaGambarkk9 = $timestamp . '_' . uniqid() . '_' . $kk9;
+        $namaGambarktp9 = $timestamp . '_' . uniqid() . '_' . $ktp9;
 
 
-    $dir = "assets/dokumen/";
-    $tmpFilesuratPernyataan = $_FILES['suratPernyataan']['tmp_name'];
-    $tmpFilekk9 = $_FILES['kk9']['tmp_name'];
-    $tmpFilektp9 = $_FILES['ktp9']['tmp_name'];
+        $dir = "assets/dokumen/";
+        $tmpFilesuratPernyataan = $_FILES['suratPernyataan']['tmp_name'];
+        $tmpFilekk9 = $_FILES['kk9']['tmp_name'];
+        $tmpFilektp9 = $_FILES['ktp9']['tmp_name'];
 
-    move_uploaded_file($tmpFilesuratPernyataan, $dir . $namaGambarsuratPernyataan);
-    move_uploaded_file($tmpFilekk9, $dir . $namaGambarkk9);
-    move_uploaded_file($tmpFilektp9, $dir . $namaGambarktp9);
+        move_uploaded_file($tmpFilesuratPernyataan, $dir . $namaGambarsuratPernyataan);
+        move_uploaded_file($tmpFilekk9, $dir . $namaGambarkk9);
+        move_uploaded_file($tmpFilektp9, $dir . $namaGambarktp9);
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, tanggal, jenis) VALUES ('$nama9','$nomor9','$namaGambarsuratPernyataan', '$namaGambarkk9','$namaGambarktp9', '$tanggal', 9)");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, tanggal, jenis) VALUES ('$nama9','$nomor9','$namaGambarsuratPernyataan', '$namaGambarkk9','$namaGambarktp9', '$tanggal', 9)");
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 
@@ -582,24 +644,31 @@ if (isset($_POST['SuketPenghasilan'])) {
     $ktp10 = $_FILES['ktp10']['name'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarsuratPernyataan10 = $timestamp . '_' . uniqid() . '_' . $suratPernyataan10;
-    $namaGambarktp10 = $timestamp . '_' . uniqid() . '_' . $ktp10;
+    if (empty($nama10) || empty($nomor10) || empty($suratPernyataan10) || empty($ktp10)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
+
+        $timestamp = time();
+        $namaGambarsuratPernyataan10 = $timestamp . '_' . uniqid() . '_' . $suratPernyataan10;
+        $namaGambarktp10 = $timestamp . '_' . uniqid() . '_' . $ktp10;
 
 
-    $dir = "assets/dokumen/";
-    $tmpFilesuratPernyataan10 = $_FILES['suratPernyataan10']['tmp_name'];
-    $tmpFilektp10 = $_FILES['ktp10']['tmp_name'];
-    $tmpFilerapor7 = $_FILES['rapor7']['tmp_name'];
-    $tmpFileijasah7 = $_FILES['ijasah7']['tmp_name'];
+        $dir = "assets/dokumen/";
+        $tmpFilesuratPernyataan10 = $_FILES['suratPernyataan10']['tmp_name'];
+        $tmpFilektp10 = $_FILES['ktp10']['tmp_name'];
+        $tmpFilerapor7 = $_FILES['rapor7']['tmp_name'];
+        $tmpFileijasah7 = $_FILES['ijasah7']['tmp_name'];
 
-    move_uploaded_file($tmpFilesuratPernyataan10, $dir . $namaGambarsuratPernyataan10);
-    move_uploaded_file($tmpFilektp10, $dir . $namaGambarktp10);
+        move_uploaded_file($tmpFilesuratPernyataan10, $dir . $namaGambarsuratPernyataan10);
+        move_uploaded_file($tmpFilektp10, $dir . $namaGambarktp10);
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, ktp, tanggal, jenis) VALUES ('$nama10','$nomor10', '$namaGambarsuratPernyataan10', '$namaGambarktp10', '$tanggal', 10)");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, ktp, tanggal, jenis) VALUES ('$nama10','$nomor10', '$namaGambarsuratPernyataan10', '$namaGambarktp10', '$tanggal', 10)");
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 
@@ -611,25 +680,32 @@ if (isset($_POST['SPORADIK'])) {
     $ktp11 = $_FILES['ktp11']['name'];
     $tanggal = date('Y-m-d');
 
-    $timestamp = time();
-    $namaGambarsuratJualBeli = $timestamp . '_' . uniqid() . '_' . $suratJualBeli;
-    $namaGambarsuketWaris = $timestamp . '_' . uniqid() . '_' . $suketWaris;
-    $namaGambarktp11 = $timestamp . '_' . uniqid() . '_' . $ktp11;
+    if (empty($nama11) || empty($nomor11) || empty($suratJualBeli) || empty($suketWaris) || empty($ktp11)) {
+        echo '<script>
+        alert("Semua field harus diisi!");
+      </script>';
+    } else {
+
+        $timestamp = time();
+        $namaGambarsuratJualBeli = $timestamp . '_' . uniqid() . '_' . $suratJualBeli;
+        $namaGambarsuketWaris = $timestamp . '_' . uniqid() . '_' . $suketWaris;
+        $namaGambarktp11 = $timestamp . '_' . uniqid() . '_' . $ktp11;
 
 
-    $dir = "assets/dokumen/";
-    $tmpFilesuratJualBeli = $_FILES['suratJualBeli']['tmp_name'];
-    $tmpFilesuketWaris = $_FILES['suketWaris']['tmp_name'];
-    $tmpFilektp11 = $_FILES['ktp11']['tmp_name'];
+        $dir = "assets/dokumen/";
+        $tmpFilesuratJualBeli = $_FILES['suratJualBeli']['tmp_name'];
+        $tmpFilesuketWaris = $_FILES['suketWaris']['tmp_name'];
+        $tmpFilektp11 = $_FILES['ktp11']['tmp_name'];
 
-    move_uploaded_file($tmpFilesuratJualBeli, $dir . $namaGambarsuratJualBeli);
-    move_uploaded_file($tmpFilesuketWaris, $dir . $namaGambarsuketWaris);
-    move_uploaded_file($tmpFilektp11, $dir . $namaGambarktp11);
+        move_uploaded_file($tmpFilesuratJualBeli, $dir . $namaGambarsuratJualBeli);
+        move_uploaded_file($tmpFilesuketWaris, $dir . $namaGambarsuketWaris);
+        move_uploaded_file($tmpFilektp11, $dir . $namaGambarktp11);
 
-    $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, other_surat, ktp, tanggal, jenis) VALUES ('$nama11','$nomor11', '$namaGambarsuratJualBeli', '$namaGambarsuketWaris','$namaGambarktp11', '$tanggal', 11)");
+        $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, other_surat, ktp, tanggal, jenis) VALUES ('$nama11','$nomor11', '$namaGambarsuratJualBeli', '$namaGambarsuketWaris','$namaGambarktp11', '$tanggal', 11)");
 
-    if ($result) {
-        header("Location: pelayananSurat.php");
+        if ($result) {
+            header("Location: pelayananSurat.php");
+        }
     }
 }
 

@@ -63,7 +63,7 @@ include('../template/admin/sidebar.php');
     <footer class="sticky-footer bg-white">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2020</span>
+                <span>Copyright &copy; Desa Tupa 2023</span>
             </div>
         </div>
     </footer>
@@ -82,15 +82,15 @@ include('../template/admin/sidebar.php');
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="judul">Judul</label>
-                            <input type="text" name="judul" class="form-control" id="judul" aria-describedby="emailHelp">
+                            <input type="text" name="judul" class="form-control" id="judul" aria-describedby="emailHelp" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Deskripsi</label>
-                            <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3" required></textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Upload Gambar</label>
-                            <input type="file" class="form-control-file" name="gambar" id="exampleFormControlFile1">
+                            <input type="file" class="form-control-file" name="gambar" id="exampleFormControlFile1" required>
                         </div>
                     </div>
                     <div class="modal-footer">
