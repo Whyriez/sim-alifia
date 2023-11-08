@@ -9,7 +9,7 @@ $detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi';
 <div class="">
     <div class="container mb-5">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <a class="dropdown-item <?php echo ($detail == 'struktur_organisasi') ? 'active' : ''; ?>" href="?detail=struktur_organisasi">Struktur Organisasi</a>
                 <a class="dropdown-item <?php echo ($detail == 'kepala_desa') ? 'active' : ''; ?>" href="?detail=kepala_desa">Kepala Desa</a>
                 <a class="dropdown-item <?php echo ($detail == 'sekretaris_desa') ? 'active' : ''; ?>" href="?detail=sekretaris_desa">Sekretaris Desa</a>
@@ -22,7 +22,7 @@ $detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi';
                 <a class="dropdown-item <?php echo ($detail == 'kepala_dusun_III') ? 'active' : ''; ?>" href="?detail=kepala_dusun_III">Kepala Dusun III</a>
                 <a class="dropdown-item <?php echo ($detail == 'kepala_dusun_IV') ? 'active' : ''; ?>" href="?detail=kepala_dusun_IV">Kepala Dusun IV</a>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8">
                 <?php if ($detail == 'struktur_organisasi') : ?>
                     <h2 class="text-left text-primary mb-2">Struktur Organisasi</h2>
                     <img src="assets/img/StrukturOrganisasi.png" class="w-100" alt="">

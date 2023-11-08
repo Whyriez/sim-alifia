@@ -12,25 +12,25 @@ require('function.php');
         <div class="col p-4">
             <ul class="nav justify-content-center">
                 <li class="nav-item mx-5">
-                    <a class="nav-link text-center active" href="#">
+                    <a class="nav-link text-center active" href="pelayananSurat.php">
                         <img src="assets/img/services.svg" width="80" alt="Menu 1" class="img-fluid">
-                        <p class="text-secondary mt-2">Layanan Masyarakat</p>
+                        <p class="text-secondary mt-2">Pelayanan Masyarakat</p>
                     </a>
                 </li>
                 <li class="nav-item mx-5">
-                    <a class="nav-link  text-center" href="#">
+                    <a class="nav-link  text-center" href="potensiDesa.php">
                         <img src="assets/img/potensiDesa.svg" width="80" alt="Menu 2" class="img-fluid">
                         <p class="text-secondary mt-2">Potensi Desa</p>
                     </a>
                 </li>
                 <li class="nav-item mx-5">
-                    <a class="nav-link  text-center" href="#">
+                    <a class="nav-link  text-center" href="pengumuman.php">
                         <img src="assets/img/pembangunanDesa.svg" width="80" alt="Menu 3" class="img-fluid">
-                        <p class="text-secondary mt-2">Pembangunan Desa</p>
+                        <p class="text-secondary mt-2">Pengunguman Desa</p>
                     </a>
                 </li>
                 <li class="nav-item mx-5">
-                    <a class="nav-link  text-center" href="#">
+                    <a class="nav-link  text-center" href="apbDesa.php">
                         <img src="assets/img/keuanganDesa.svg" width="80" alt="Menu 3" class="img-fluid">
                         <p class="text-secondary mt-2">Keuangan Desa</p>
                     </a>
@@ -47,11 +47,9 @@ require('function.php');
                 <?php $loop = mysqli_query($koneksi, "select * from berita ORDER BY tanggal DESC LIMIT 2");
 
                 while ($a = mysqli_fetch_array($loop)) { ?>
-                    <div class="d-flex flex-column flex-md-row mb-4 align-items-md-center">
-                        <div class="w-md-25   mr-md-3 ">
-                            <img src="assets/gambar/<?= $a['gambar'] ?>" alt="Gambar" width="800" class="img-fluid ">
-                        </div>
-                        <div style="margin-left: 1.25rem;">
+                    <div class="d-flex flex-column flex-md-row mb-4 ">
+                        <img src="assets/gambar/<?= $a['gambar'] ?>" alt="Gambar" class="responsive-img">
+                        <div class="m-left">
                             <h3 class="text-primary mb-2"><a href="detail.php?detail=<?= $a['id'] ?>" style="text-decoration: none;"><?= $a['judul'] ?></a></h3>
                             <p>
                                 <?= substr($a['deskripsi'], 0, 400); ?>

@@ -19,11 +19,9 @@ require('function.php');
                     $loop = mysqli_query($koneksi, $query);
                 }
                 while ($a = mysqli_fetch_array($loop)) { ?>
-                    <div class="d-flex flex-column flex-md-row mb-4 align-items-md-center">
-                        <div class="w-md-25   mr-md-3 ">
-                            <img src="assets/gambar/<?= $a['gambar'] ?>" alt="Gambar" width="900" class="img-fluid ">
-                        </div>
-                        <div style="margin-left: 1.25rem;">
+                    <div class="d-flex flex-column flex-md-row mb-4">
+                        <img src="assets/gambar/<?= $a['gambar'] ?>" alt="Gambar" class="responsive-img ">
+                        <div class="m-left">
                             </svg>
                             <h5 class="text-primary mb-2"><a href="detail.php?detail=<?= $a['id'] ?>" style="text-decoration: none;"><?= $a['judul'] ?></a></h5>
                             <i class=" fa fa-calendar text-primary" aria-hidden="true" style="font-size: 14px;"></i>

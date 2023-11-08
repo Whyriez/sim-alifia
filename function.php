@@ -304,8 +304,11 @@ if (isset($_POST['kirimSuratPindahPenduduk'])) {
         $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, buku_nikah,foto, ijasah, alamat, tanggal, jenis) VALUES ('$nama1', '$nomor1', '$namaGambarsuratPernyataan1','$namaGambarkk1','$namaGambarktp1', '$namaGambarbukuNikah1','$namaGambarselfieKtp1','$namaGambarijasah1','$alamat1', '$tanggal', 1)");
 
         if ($result) {
-            header("Location: pelayananSurat.php");
+            echo "<script>
+            alert('Berhasil Mengirim Surat!');
+            window.location = 'pelayananSurat.php'</script>";
         }
+        // header("Location: pelayananSurat.php");
     }
 }
 
@@ -350,7 +353,10 @@ if (isset($_POST['SuratPengantarNikah'])) {
         $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, kk, ktp, buku_nikah,foto, ijasah, tanggal, jenis) VALUES ('$nama2','$nomor2', '$namaGambarkk2','$namaGambarktp2', '$namaGambarbukuNikah2','$namaGambarpasFoto2','$namaGambarijasah2', '$tanggal', 2)");
 
         if ($result) {
-            header("Location: pelayananSurat.php");
+            echo "<script>
+            alert('Berhasil Mengirim Surat!');
+            window.location = 'pelayananSurat.php'</script>";
+            // header("Location: pelayananSurat.php");
         }
     }
 }
@@ -391,7 +397,9 @@ if (isset($_POST['SuratKeteranganMeninggal'])) {
         $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, other_ktp, tanggal, jenis) VALUES ('$nama3', '$nomor3','$namaGambarsuketRumahSakit', '$namaGambarkk3','$namaGambarktp3', '$namaGambarktp3other', '$tanggal', 3)");
 
         if ($result) {
-            header("Location: pelayananSurat.php");
+            echo "<script>
+            alert('Berhasil Mengirim Surat!');
+            window.location = 'pelayananSurat.php'</script>";
         }
     }
 }
@@ -432,7 +440,9 @@ if (isset($_POST['SuratAhliWaris'])) {
         $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, other_ktp, tanggal, jenis) VALUES ('$nama4', '$nomor4','$namaGambarsuketMeninggalDunia', '$namaGambarkk4AhliWaris','$namaGambarktp4AhliWaris', '$namaGambarktp4Pemohon', '$tanggal', 4)");
 
         if ($result) {
-            header("Location: pelayananSurat.php");
+            echo "<script>
+            alert('Berhasil Mengirim Surat!');
+            window.location = 'pelayananSurat.php'</script>";
         }
     }
 }
@@ -473,7 +483,9 @@ if (isset($_POST['SuratKelahiran'])) {
         $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor,surat, kk, ktp, buku_nikah, tanggal, jenis) VALUES ('$nama5','$nomor5','$namaGambarsuratKelahiran', '$namaGambarkk5','$namaGambarktp5', '$namaGambarbukuNikah5', '$tanggal', 5)");
 
         if ($result) {
-            header("Location: pelayananSurat.php");
+            echo "<script>
+            alert('Berhasil Mengirim Surat!');
+            window.location = 'pelayananSurat.php'</script>";
         }
     }
 }
@@ -505,7 +517,9 @@ if (isset($_POST['SuratKeteranganTanah'])) {
         $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, ktp, tanggal, jenis) VALUES ('$nama6','$nomor6', '$namaGambarbuktiKepemilikanTanah','$namaGambarktp6', '$tanggal', 6)");
 
         if ($result) {
-            header("Location: pelayananSurat.php");
+            echo "<script>
+            alert('Berhasil Mengirim Surat!');
+            window.location = 'pelayananSurat.php'</script>";
         }
     }
 }
@@ -546,7 +560,9 @@ if (isset($_POST['SuratKartuKeluarga'])) {
         $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, buku_nikah, rapor, ijasah, tanggal, jenis) VALUES ('$nama7','$nomor7','$namaGambarakta7', '$namaGambarbukuNikah7','$namaGambarrapor7', '$namaGambarijasah7', '$tanggal', 7)");
 
         if ($result) {
-            header("Location: pelayananSurat.php");
+            echo "<script>
+            alert('Berhasil Mengirim Surat!');
+            window.location = 'pelayananSurat.php'</script>";
         }
     }
 }
@@ -595,7 +611,9 @@ if (isset($_POST['SuratAktaKelahiran'])) {
         $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, other_ktp, buku_nikah, ijasah, tanggal, jenis) VALUES ('$nama8','$nomor8','$namaGambarsuketLahir', '$namaGambarkk8','$namaGambarktp8', '$namaGambarktp8Saksi', '$namaGambarbukuNikah8', '$namaGambarijasah8', '$tanggal', 8)");
 
         if ($result) {
-            header("Location: pelayananSurat.php");
+            echo "<script>
+            alert('Berhasil Mengirim Surat!');
+            window.location = 'pelayananSurat.php'</script>";
         }
     }
 }
@@ -632,7 +650,9 @@ if (isset($_POST['SuketTidakMampu'])) {
         $result = mysqli_query($koneksi, "INSERT INTO pelayanan_surat (nama, nomor, surat, kk, ktp, tanggal, jenis) VALUES ('$nama9','$nomor9','$namaGambarsuratPernyataan', '$namaGambarkk9','$namaGambarktp9', '$tanggal', 9)");
 
         if ($result) {
-            header("Location: pelayananSurat.php");
+            echo "<script>
+                alert('Berhasil Mengirim Surat!');
+                window.location = 'pelayananSurat.php'</script>";
         }
     }
 }

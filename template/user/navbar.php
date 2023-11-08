@@ -14,7 +14,7 @@
             <div class="navbar-brand text-dark"><img src="assets/img/LogoBonebolango.png" width="50" alt="">
             </div>
             <div class="text-dark" style="text-decoration: none">
-                <h6>Desa Tupa</h6>
+                <h6>Sistem Informasi Desa Tupa</h6>
                 <h6 class="fw-normal">Kabupaten Bone Bolango</h6>
             </div>
         </div>
@@ -25,13 +25,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
                 <li class="nav-item dropdown ">
-                    <a class="nav-link fs-6 <?php if ($page == 'index.php' || $page == 'visiMisi.php' || $page == 'sejarah.php' || $page == 'geografis.php' || $page == 'demografi.php') : echo 'active text-white';
+                    <a class="nav-link fs-6 <?php if ($page == 'index.php' || $page == 'sejarah.php' || $page == 'geografis.php' || $page == 'demografi.php') : echo 'active text-white';
                                             endif; ?>  text-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Profil Desa
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="index.php">Home</a></li>
-                        <li><a class="dropdown-item" href="visiMisi.php">Visi Misi </a></li>
                         <li><a class="dropdown-item" href="sejarah.php">Sejarah Desa</a></li>
                         <li><a class="dropdown-item" href="geografis.php">Geografis Desa</a></li>
                         <li><a class="dropdown-item" href="demografi.php">Demografis Desa</a></li>
