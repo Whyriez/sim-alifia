@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 16, 2023 at 09:13 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Host: localhost:3306
+-- Generation Time: Nov 16, 2023 at 12:06 PM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `berita` (
-  `id` int(11) NOT NULL,
-  `judul` varchar(100) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `gambar` varchar(255) NOT NULL,
+  `id` int NOT NULL,
+  `judul` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `deskripsi` text COLLATE utf8mb4_general_ci NOT NULL,
+  `gambar` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -50,21 +50,21 @@ INSERT INTO `berita` (`id`, `judul`, `deskripsi`, `gambar`, `tanggal`) VALUES
 --
 
 CREATE TABLE `pelayanan_surat` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `nomor` varchar(23) NOT NULL,
-  `surat` varchar(255) DEFAULT NULL,
-  `kk` varchar(255) DEFAULT NULL,
-  `ktp` varchar(255) DEFAULT NULL,
-  `buku_nikah` varchar(255) DEFAULT NULL,
-  `other_ktp` varchar(255) DEFAULT NULL,
-  `ijasah` varchar(255) DEFAULT NULL,
-  `alamat` varchar(50) DEFAULT NULL,
-  `foto` varchar(255) DEFAULT NULL,
-  `rapor` varchar(255) DEFAULT NULL,
-  `other_surat` varchar(255) DEFAULT NULL,
+  `id` int NOT NULL,
+  `nama` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `nomor` varchar(23) COLLATE utf8mb4_general_ci NOT NULL,
+  `surat` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `kk` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ktp` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `buku_nikah` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `other_ktp` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `ijasah` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `alamat` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `foto` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `rapor` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `other_surat` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `tanggal` date NOT NULL,
-  `jenis` int(11) NOT NULL
+  `jenis` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -74,10 +74,10 @@ CREATE TABLE `pelayanan_surat` (
 --
 
 CREATE TABLE `pengumuman` (
-  `id` int(11) NOT NULL,
-  `judul` varchar(100) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `gambar` varchar(255) NOT NULL,
+  `id` int NOT NULL,
+  `judul` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `deskripsi` text COLLATE utf8mb4_general_ci NOT NULL,
+  `gambar` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -96,11 +96,11 @@ INSERT INTO `pengumuman` (`id`, `judul`, `deskripsi`, `gambar`, `tanggal`) VALUE
 --
 
 CREATE TABLE `potensi_desa` (
-  `id` int(11) NOT NULL,
-  `judul` varchar(100) NOT NULL,
-  `deskripsi` text NOT NULL,
-  `kategori` varchar(50) NOT NULL,
-  `gambar` varchar(255) NOT NULL,
+  `id` int NOT NULL,
+  `judul` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `deskripsi` text COLLATE utf8mb4_general_ci NOT NULL,
+  `kategori` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `gambar` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -114,14 +114,77 @@ INSERT INTO `potensi_desa` (`id`, `judul`, `deskripsi`, `kategori`, `gambar`, `t
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_letak_wilayah`
+--
+
+CREATE TABLE `tb_letak_wilayah` (
+  `id` int NOT NULL,
+  `batas` varchar(100) NOT NULL,
+  `desa` varchar(100) NOT NULL,
+  `kecamatan` varchar(100) NOT NULL,
+  `kabupaten` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_letak_wilayah`
+--
+
+INSERT INTO `tb_letak_wilayah` (`id`, `batas`, `desa`, `kecamatan`, `kabupaten`) VALUES
+(6, 'Sebelah Utara', 'Desa Tulo\'a dan Bunu\'o', 'Bulango Utara', 'Bone Bolango');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_luas_wilayah`
+--
+
+CREATE TABLE `tb_luas_wilayah` (
+  `id` int NOT NULL,
+  `peruntukan` varchar(100) NOT NULL,
+  `luas` varchar(25) NOT NULL,
+  `keterangan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_luas_wilayah`
+--
+
+INSERT INTO `tb_luas_wilayah` (`id`, `peruntukan`, `luas`, `keterangan`) VALUES
+(5, 'Tanah Sawah', '0,00', 'dfafa'),
+(6, 'Tanah Sawah', '7,5', 'dfafa');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_penduduk`
+--
+
+CREATE TABLE `tb_penduduk` (
+  `id` int NOT NULL,
+  `jumlah_laki` int NOT NULL,
+  `jumlah_perempuan` int NOT NULL,
+  `total_penduduk` bigint NOT NULL,
+  `jumlah_kepala` bigint NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_penduduk`
+--
+
+INSERT INTO `tb_penduduk` (`id`, `jumlah_laki`, `jumlah_perempuan`, `total_penduduk`, `jumlah_kepala`) VALUES
+(1, 573, 582, 1155, 355);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `id` int NOT NULL,
+  `username` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -160,6 +223,24 @@ ALTER TABLE `potensi_desa`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb_letak_wilayah`
+--
+ALTER TABLE `tb_letak_wilayah`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_luas_wilayah`
+--
+ALTER TABLE `tb_luas_wilayah`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_penduduk`
+--
+ALTER TABLE `tb_penduduk`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -173,31 +254,49 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `pelayanan_surat`
 --
 ALTER TABLE `pelayanan_surat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `potensi_desa`
 --
 ALTER TABLE `potensi_desa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tb_letak_wilayah`
+--
+ALTER TABLE `tb_letak_wilayah`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tb_luas_wilayah`
+--
+ALTER TABLE `tb_luas_wilayah`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tb_penduduk`
+--
+ALTER TABLE `tb_penduduk`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
