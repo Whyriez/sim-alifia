@@ -7,7 +7,7 @@ require('function.php');
 ?>
 
 <div class="">
-    <img src="assets/img/Banner.jpg" alt="" class="w-100" style="height: 500px; object-fit:cover">
+    <img src="assets/img/BannerDesa.jpg" alt="" class="w-100" style="height: 750px; object-fit:cover">
     <div style="background-color: #f8f9fc;">
         <div class="col p-4">
             <ul class="nav justify-content-center">
@@ -52,7 +52,7 @@ require('function.php');
                         <div class="m-left">
                             <h3 class="text-primary mb-2"><a href="detail.php?detail=<?= $a['id'] ?>" style="text-decoration: none;"><?= $a['judul'] ?></a></h3>
                             <p>
-                                <?= substr($a['deskripsi'], 0, 400); ?>
+                                <?= substr($a['deskripsi'], 0, 200); ?>
                                 <a href="detail.php?detail=<?= $a['id'] ?>" style="font-size: 11px; font-weight: 500; padding: 3px 8px; " class=" btn btn-primary"> selengkapnya <i class="fa fa-arrow-right" aria-hidden="true"></i>
                                 </a>
                             </p>

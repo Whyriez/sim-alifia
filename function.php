@@ -258,6 +258,134 @@ if (isset($_GET['hapusPengumuman'])) {
     if ($sql) header("Location: admin/pengumuman.php");
 }
 
+if (isset($_POST['ubahDemografis'])) {
+    $id = $_POST['id'];
+    $jml_laki = $_POST['jml_laki'];
+    $jml_perempuan = $_POST['jml_perempuan'];
+    $jml_tot_penduduk = $_POST['jml_tot_penduduk'];
+    $jml_kepala = $_POST['jml_kepala'];
+
+    $queryShow = "SELECT * FROM berita WHERE id = '$id'";
+    $sqlShow = mysqli_query($koneksi, $queryShow);
+    $result = mysqli_fetch_assoc($sqlShow);
+
+
+    $query = "UPDATE tb_penduduk SET jumlah_laki='$jml_laki',jumlah_perempuan='$jml_perempuan', total_penduduk= '$jml_tot_penduduk', jumlah_kepala= '$jml_kepala' WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($result) {
+        header("Location: demografis.php");
+    }
+}
+
+
+if (isset($_POST['tambahLetak'])) {
+    // Ambil nilai dari form
+    $batas = $_POST['batas'];
+    $desa = $_POST['desa'];
+    $kecamatan = $_POST['kecamatan'];
+    $kabupaten = $_POST['kabupaten'];
+
+    $query = "INSERT INTO tb_letak_wilayah (batas, desa, kecamatan, kabupaten) VALUES (?, ?, ?, ?)";
+    $stmt = mysqli_prepare($koneksi, $query);
+    mysqli_stmt_bind_param($stmt, "ssss", $batas, $desa, $kecamatan, $kabupaten);
+
+
+    $result = mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    if ($result) {
+        header("Location: geografisLetak.php");
+    } else {
+        echo "Error: " . mysqli_error($koneksi);
+    }
+}
+
+if (isset($_POST['ubahLetak'])) {
+    $id = $_POST['id'];
+    $batas = $_POST['batas'];
+    $desa = $_POST['desa'];
+    $kecamatan = $_POST['kecamatan'];
+    $kabupaten = $_POST['kabupaten'];
+
+    $query = "UPDATE tb_letak_wilayah SET batas = ?, desa = ?, kecamatan = ?, kabupaten = ? WHERE id = ?";
+    $stmt = mysqli_prepare($koneksi, $query);
+
+    mysqli_stmt_bind_param($stmt, "ssssi", $batas, $desa, $kecamatan, $kabupaten, $id);
+
+    $result = mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    if ($result) {
+        header("Location: geografisLetak.php");
+    } else {
+        echo "Error: " . mysqli_error($koneksi);
+    }
+}
+
+
+if (isset($_GET['hapusLetak'])) {
+    $id = $_GET['hapusLetak'];
+    $query = "DELETE FROM tb_letak_wilayah WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($sql) header("Location: admin/geografisLetak.php");
+}
+
+// tambah luas wilayah
+if (isset($_POST['tambahLuas'])) {
+    // Ambil nilai dari form
+    $peruntukan = $_POST['peruntukan'];
+    $luas = $_POST['luas'];
+    $keterangan = $_POST['keterangan'];
+
+
+    $query = "INSERT INTO tb_luas_wilayah (peruntukan, luas, keterangan) VALUES ('$peruntukan', '$luas', '$keterangan')";
+    $stmt = mysqli_prepare($koneksi, $query);
+
+
+    $result = mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    if ($result) {
+        header("Location: geografisLuas.php");
+    } else {
+        echo "Error: " . mysqli_error($koneksi);
+    }
+}
+
+
+// ubah luas
+if (isset($_POST['ubahLuas'])) {
+    $id = $_POST['id'];
+    $peruntukan = $_POST['peruntukan'];
+    $luas = $_POST['luas'];
+    $keterangan = $_POST['keterangan'];
+
+    $query = "UPDATE tb_luas_wilayah SET peruntukan = '$peruntukan', luas = '$luas', keterangan = '$keterangan' WHERE id = '$id'";
+    $stmt = mysqli_prepare($koneksi, $query);
+
+
+    $result = mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    if ($result) {
+        header("Location: geografisLuas.php");
+    } else {
+        echo "Error: " . mysqli_error($koneksi);
+    }
+}
+
+if (isset($_GET['hapusLuas'])) {
+    $id = $_GET['hapusLuas'];
+    $query = "DELETE FROM tb_luas_wilayah WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($sql) header("Location: admin/geografisLuas.php");
+}
+
+
+
 
 if (isset($_POST['kirimSuratPindahPenduduk'])) {
     //Surat Pindah Penduduk

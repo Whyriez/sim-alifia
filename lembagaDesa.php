@@ -15,12 +15,12 @@ include("template/user/navbar.php"); ?>
             <tbody>
                 <tr>
                     <td>BADAN PERMUSYAWARATAN DESA <br> <span class="badge bg-primary">BPD</span></td>
-                    <td>Jl. Jurusan Keru - Sesaot Narmada <img src="assets/img/LogoBonebolango.png" class="float-end" width="40" alt=""></td>
+                    <td>Jl. Ahmad Sodik No. 17 <img src="assets/img/LogoBonebolango.png" class="float-end" width="40" alt=""></td>
                 </tr>
                 <tr>
                     <td>LEMBAGA KEMASYARAKATAN <br> <span class="badge bg-primary">LKD</span></td>
                     <td>
-                        Jl. Jurusan Keru - Sesaot Narmada <img src="assets/img/LogoBonebolango.png" class="float-end " width="40" alt="">
+                    Jl. Ahmad Sodik No. 17 <img src="assets/img/LogoBonebolango.png" class="float-end " width="40" alt="">
                     </td>
                 </tr>
             </tbody>

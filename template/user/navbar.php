@@ -3,9 +3,9 @@
 <div style="background-color: #0088cc" class="navbar navbar-expand-lg py-3">
     <div class="container d-flex justify-content-between text-white align-items-center">
         <div>
-            <h6 class="m-0">088828323 | Desatupa@gmail.com</h6>
+            <h6 class="m-0">085277011484 | Desatupa@gmail.com</h6>
         </div>
-        <h6 class="m-0">088828323</h6>
+        <h6 class="m-0">085277011484</h6>
     </div>
 </div>
 <nav class="navbar navbar-expand-lg p-3 navbar-light bg-light">
@@ -15,7 +15,7 @@
             </div>
             <div class="text-dark" style="text-decoration: none">
                 <h6>Sistem Informasi Desa Tupa</h6>
-                <h6 class="fw-normal">Kabupaten Bone Bolango</h6>
+                <h6 class="fw-normal">Bulango Utara, Kab. Bone Bolango</h6>
             </div>
         </div>
 
@@ -80,11 +80,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Facebook</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">Instagram</a></li>
                     </ul>
                 </li>
 

@@ -51,22 +51,23 @@ $detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi';
 
                         Wewenang Kepala Desa : <br> <br>
 
-                        1. memimpin penyelenggaraan Pemerintahan Desa; <br>
-                        2. mengangkat dan memberhentikan perangkat Desa; <br>
-                        3. memegang kekuasaan pengelolaan Keuangan dan Aset Desa; <br>
-                        4. menetapkan Peraturan Desa; <br>
-                        5. menetapkan Anggaran Pendapatan dan Belanja Desa; <br>
-                        6. membina kehidupan masyarakat Desa; <br>
-                        7. membina ketenteraman dan ketertiban masyarakat Desa; <br>
-                        8. membina dan meningkatkan perekonomian Desa serta mengintegrasikannya agar mencapai perekonomian <br>
-                        9. skala produktif untuk sebesar-besarnya kemakmuran masyarakat Desa; <br>
-                        10. mengembangkan sumber pendapatan Desa;<br>
-                        11. mengusulkan dan menerima pelimpahan sebagian kekayaan negara guna meningkatkan kesejahteraan masyarakat Desa;<br>
-                        12. mengembangkan kehidupan sosial budaya masyarakat Desa;<br>
-                        13. memanfaatkan teknologi tepat guna;<br>
-                        14. mengoordinasikan Pembangunan Desa secara partisipatif;<br>
-                        15. mewakili Desa di dalam dan di luar pengadilan atau menunjuk kuasa hukum untuk mewakilinya sesuai 16. dengan ketentuan peraturan perundang-undangan; dan<br>
-                        17. melaksanakan wewenang lain yang sesuai denganketentuan peraturan perundang-undangan.</p>
+                        1. Memimpin penyelenggaraan Pemerintahan Desa; <br>
+                        2. Mengangkat dan memberhentikan perangkat Desa; <br>
+                        3. Memegang kekuasaan pengelolaan Keuangan dan Aset Desa; <br>
+                        4. Menetapkan Peraturan Desa; <br>
+                        5. Menetapkan Anggaran Pendapatan dan Belanja Desa; <br>
+                        6. Membina kehidupan masyarakat Desa; <br>
+                        7. Membina ketenteraman dan ketertiban masyarakat Desa; <br>
+                        8. Membina dan meningkatkan perekonomian Desa serta mengintegrasikannya agar mencapai perekonomian <br>
+                        9. Skala produktif untuk sebesar-besarnya kemakmuran masyarakat Desa; <br>
+                        10. Mengembangkan sumber pendapatan Desa;<br>
+                        11. Mengusulkan dan menerima pelimpahan sebagian kekayaan negara guna meningkatkan kesejahteraan masyarakat Desa;<br>
+                        12. Mengembangkan kehidupan sosial budaya masyarakat Desa;<br>
+                        13. Memanfaatkan teknologi tepat guna;<br>
+                        14. Mengoordinasikan Pembangunan Desa secara partisipatif;<br>
+                        15. Mewakili Desa di dalam dan di luar pengadilan atau menunjuk kuasa hukum untuk mewakilinya sesuai 
+                        16. Dengan ketentuan peraturan perundang-undangan; dan<br>
+                        17. Melaksanakan wewenang lain yang sesuai denganketentuan peraturan perundang-undangan.</p>
                 <?php elseif ($detail == 'sekretaris_desa') : ?>
                     <h2 class="text-left text-primary mb-2">Sekretaris Desa</h2>
                     <table class="table table-condensed">
@@ -214,7 +215,48 @@ $detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi';
                             <td>-</td>
                         </tr>
                     </table>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita blanditiis quae nam, rerum quisquam accusamus quibusdam in esse distinctio dolorem. Praesentium eius saepe repudiandae quia adipisci expedita pariatur ipsa similique.</p>
+                    <p>Kedudukan kasi keuangan dalam pengelolaan keuangan desa adalah sebagai Pelaksana Fungsi Kebendaharaan dalam struktur PPKD (Pelaksana Pengelolaan Keuangan Desa). PPKD merupakan perangkat desa yang dibentuk untuk melaksanakan pengelolaan keuangan desa.<br> <br>
+
+Tugas pokok kasi keuangan meliputi: <br> <br>
+
+Melaksanakan fungsi kebendaharaan dalam urusan pelayanan administrasi keuangan desa <br> 
+Menyusun Rencana Anggaran Kas Desa (RAK Desa) <br>
+Mengelola kas desa <br>
+Melakukan pencatatan dan pelaporan keuangan desa <br>
+Melaksanakan tugas lain yang diberikan oleh Sekretaris Desa <br>
+Kasi keuangan bertanggung jawab kepada Sekretaris Desa <br>
+
+Berikut adalah uraian tugas kasi keuangan secara lebih detail <br> <br>
+
+Melaksanakan fungsi kebendaharaan dalam urusan pelayanan administrasi keuangan desa
+Tugas ini meliputi: <br> <br>
+
+* Menerima, menyimpan, dan menyalurkan dana desa <br>
+* Membayar tagihan dan kewajiban desa <br>
+* Melakukan penatausahaan keuangan desa <br>
+* Menyiapkan laporan keuangan desa <br>
+Menyusun Rencana Anggaran Kas Desa (RAK Desa) <br>
+RAK Desa adalah rencana penerimaan dan pengeluaran kas desa dalam satu periode anggaran. RAK Desa disusun oleh kasi keuangan dengan berkoordinasi dengan Sekretaris Desa <br>
+
+Mengelola kas desa <br> <br>
+Kas desa adalah tempat penyimpanan dana desa. Kasi keuangan bertanggung jawab atas pengelolaan kas desa, termasuk: <br> <br>
+
+* Melakukan pencatatan penerimaan dan pengeluaran kas desa <br>
+* Melakukan pemeriksaan fisik kas desa secara berkala <br>
+* Menjaga keamanan kas desa <br>
+Melakukan pencatatan dan pelaporan keuangan desa <br>
+Kasi keuangan bertanggung jawab atas pencatatan dan pelaporan keuangan desa, termasuk: <br>
+
+* Melakukan pencatatan transaksi keuangan desa <br>
+* Menyiapkan laporan keuangan desa <br>
+* Menyampaikan laporan keuangan desa kepada BPD <br>
+Melaksanakan tugas lain yang diberikan oleh Sekretaris Desa <br>
+Tugas lain yang diberikan oleh Sekretaris Desa dapat berupa: <br>
+
+* Menyusun laporan pertanggungjawaban keuangan desa <br>
+* Melakukan pemeriksaan keuangan desa <br>
+* Menyiapkan anggaran belanja desa <br>
+Kasi keuangan merupakan salah satu perangkat desa yang penting. Kasi keuangan berperan penting dalam pengelolaan keuangan desa. Oleh karena itu, kasi keuangan harus memiliki pengetahuan dan keterampilan yang memadai dalam bidang keuangan.</p>
                 <?php elseif ($detail == 'kaur_perencanaan') : ?>
                     <h2 class="text-left text-primary mb-2">Kaur Perencanaan</h2>
                     <table class="table table-condensed">
@@ -234,7 +276,39 @@ $detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi';
                             <td>-</td>
                         </tr>
                     </table>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita blanditiis quae nam, rerum quisquam accusamus quibusdam in esse distinctio dolorem. Praesentium eius saepe repudiandae quia adipisci expedita pariatur ipsa similique.</p>
+                    <p>Kepala Urusan Perencanaan (Kaur Perencanaan) dan Kepala Urusan Tata Usaha dan Umum (Kaur TU dan Umum) merupakan unsur staf sekretariat yang berada di bawah dan bertanggung jawab kepada Sekretaris Desa.<br> <br>
+
+Tugas dan fungsi Kaur Perencanaan <br> <br>
+
+Kaur Perencanaan bertugas membantu Sekretaris Desa dalam urusan perencanaan pembangunan desa. Adapun tugas dan fungsi Kaur Perencanaan secara lebih rinci adalah sebagai berikut:<br> <br>
+
+Menyusun rencana kerja tahunan perangkat desa di bidang perencanaan pembangunan desa <br>
+Melaksanakan koordinasi dengan perangkat desa lainnya dalam penyusunan rencana kerja tahunan perangkat desa di bidang perencanaan pembangunan desa <br>
+Melaksanakan koordinasi dengan perangkat desa lainnya dalam penyusunan rencana kerja pemerintah desa <br>
+Melakukan pendataan dan analisis data potensi dan permasalahan desa <br>
+Menyusun rencana pembangunan desa <br>
+Menyusun anggaran pendapatan dan belanja desa <br>
+Melaksanakan pengendalian dan evaluasi pelaksanaan pembangunan desa <br>
+Melaksanakan penyusunan laporan pelaksanaan pembangunan desa, dan<br>
+Melaksanakan tugas lain yang diberikan oleh Sekretaris Desa <br>
+Tugas dan fungsi Kaur TU dan Umum <br>
+
+Kaur TU dan Umum bertugas membantu Sekretaris Desa dalam urusan pelayanan administrasi ketatausahaan. Adapun tugas dan fungsi Kaur TU dan Umum secara lebih rinci adalah sebagai berikut: <br> <br>
+
+Melaksanakan urusan tata naskah dinas <br>
+Melaksanakan urusan administrasi surat menyurat <br>
+Melaksanakan urusan arsip dan ekspedisi <br>
+Melaksanakan urusan penataan administrasi perangkat desa <br>
+Melaksanakan urusan penyediaan prasarana perangkat desa dan kantor <br>
+Melaksanakan urusan penyiapan rapat <br>
+Melaksanakan urusan pengadministrasian aset, inventarisasi, perjalanan dinas dan pelayanan umum <br>
+Melaksanakan urusan pemeliharaan sarana dan prasarana kantor dan <br>
+Melaksanakan tugas lain yang diberikan oleh Sekretaris Desa <br>
+Hubungan antara Kaur Perencanaan dan Kaur TU dan Umum <br>
+
+Secara umum, hubungan antara Kaur Perencanaan dan Kaur TU dan Umum adalah hubungan kerja sama. Kaur Perencanaan membutuhkan dukungan dari Kaur TU dan Umum dalam hal penyediaan data dan informasi yang diperlukan untuk menyusun rencana pembangunan desa dan anggaran pendapatan dan belanja desa. Sementara itu, Kaur TU dan Umum membutuhkan dukungan dari Kaur Perencanaan dalam hal penyusunan rencana kerja tahunan perangkat desa di bidang tata usaha dan umum.<br> <br>
+
+Selain itu, Kaur Perencanaan dan Kaur TU dan Umum juga dapat bekerja sama dalam hal-hal lain yang terkait dengan kepentingan desa, seperti penyusunan laporan pelaksanaan pembangunan desa dan penyelenggaraan pelayanan publik.</p>
                 <?php elseif ($detail == 'kepala_dusun_I') : ?>
                     <h2 class="text-left text-primary mb-2">Kepala Dusun I</h2>
                     <table class="table table-condensed">
@@ -254,7 +328,37 @@ $detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi';
                             <td>-</td>
                         </tr>
                     </table>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita blanditiis quae nam, rerum quisquam accusamus quibusdam in esse distinctio dolorem. Praesentium eius saepe repudiandae quia adipisci expedita pariatur ipsa similique.</p>
+                    <p>Kepala dusun adalah perangkat desa yang berkedudukan sebagai unsur satuan tugas kewilayahan yang bertugas membantu kepala desa dalam pelaksanaan tugas wilayahnya. Kepala dusun bertanggung jawab kepada kepala desa.<br> <br>
+
+Dalam struktur organisasi desa, kepala dusun berada di bawah sekretaris desa. Kepala dusun bertugas membantu kepala desa dalam melaksanakan kegiatan pemerintahan, pembangunan, pembinaan kemasyarakatan, dan pemberdayaan masyarakat di wilayahnya.<br> <br>
+
+Berikut adalah tugas kepala dusun secara umum: <br> <br>
+
+Membantu kepala desa dalam menyelenggarakan pemerintahan desa di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pembangunan desa di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pembinaan kemasyarakatan di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pemberdayaan masyarakat di wilayahnya <br>
+Selain tugas umum tersebut, kepala dusun juga memiliki tugas khusus yang berkaitan dengan wilayahnya, seperti: <br><br>
+
+Melakukan pendataan penduduk, rumah tangga, dan sarana prasarana di wilayahnya <br>
+Melakukan pembinaan ketentraman dan ketertiban di wilayahnya <br>
+Melakukan pembinaan pemberdayaan masyarakat di wilayahnya <br>
+Melakukan pengelolaan wilayah di wilayahnya <br>
+Kepala dusun diangkat oleh kepala desa setelah dikonsultasikan dengan camat atas nama bupati/walikota. Kepala dusun harus memenuhi persyaratan sebagai berikut:<br> <br>
+
+Warga negara Indonesia yang bertakwa kepada Tuhan Yang Maha Esa <br>
+Berpendidikan minimal Sekolah Menengah Atas (SMA) atau sederajat <br>
+Berusia paling rendah 25 tahun <br>
+Sehat jasmani dan rohani <br>
+Berwibawa dan mampu menggerakkan masyarakat <br>
+Tidak pernah dihukum penjara karena melakukan tindak pidana kejahatan dengan hukuman paling singkat lima tahun.
+Kepala dusun dibantu oleh perangkat dusun, yang terdiri dari: <br> <br>
+
+Kepala urusan pemerintahan <br>
+Kepala urusan pembangunan <br>
+Kepala urusan kemasyarakatan <br>
+Kepala urusan pemberdayaan masyarakat <br>
+Perangkat dusun diangkat oleh kepala dusun setelah dikonsultasikan dengan kepala desa dan camat <br></p>
                 <?php elseif ($detail == 'kepala_dusun_II') : ?>
                     <h2 class="text-left text-primary mb-2">Kepala Dusun II</h2>
                     <table class="table table-condensed">
@@ -274,7 +378,37 @@ $detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi';
                             <td>-</td>
                         </tr>
                     </table>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita blanditiis quae nam, rerum quisquam accusamus quibusdam in esse distinctio dolorem. Praesentium eius saepe repudiandae quia adipisci expedita pariatur ipsa similique.</p>
+                    <p>Kepala dusun adalah perangkat desa yang berkedudukan sebagai unsur satuan tugas kewilayahan yang bertugas membantu kepala desa dalam pelaksanaan tugas wilayahnya. Kepala dusun bertanggung jawab kepada kepala desa.<br> <br>
+
+Dalam struktur organisasi desa, kepala dusun berada di bawah sekretaris desa. Kepala dusun bertugas membantu kepala desa dalam melaksanakan kegiatan pemerintahan, pembangunan, pembinaan kemasyarakatan, dan pemberdayaan masyarakat di wilayahnya.<br> <br>
+
+Berikut adalah tugas kepala dusun secara umum: <br> <br>
+
+Membantu kepala desa dalam menyelenggarakan pemerintahan desa di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pembangunan desa di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pembinaan kemasyarakatan di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pemberdayaan masyarakat di wilayahnya <br>
+Selain tugas umum tersebut, kepala dusun juga memiliki tugas khusus yang berkaitan dengan wilayahnya, seperti: <br><br>
+
+Melakukan pendataan penduduk, rumah tangga, dan sarana prasarana di wilayahnya <br>
+Melakukan pembinaan ketentraman dan ketertiban di wilayahnya <br>
+Melakukan pembinaan pemberdayaan masyarakat di wilayahnya <br>
+Melakukan pengelolaan wilayah di wilayahnya <br>
+Kepala dusun diangkat oleh kepala desa setelah dikonsultasikan dengan camat atas nama bupati/walikota. Kepala dusun harus memenuhi persyaratan sebagai berikut:<br> <br>
+
+Warga negara Indonesia yang bertakwa kepada Tuhan Yang Maha Esa <br>
+Berpendidikan minimal Sekolah Menengah Atas (SMA) atau sederajat <br>
+Berusia paling rendah 25 tahun <br>
+Sehat jasmani dan rohani <br>
+Berwibawa dan mampu menggerakkan masyarakat <br>
+Tidak pernah dihukum penjara karena melakukan tindak pidana kejahatan dengan hukuman paling singkat lima tahun.
+Kepala dusun dibantu oleh perangkat dusun, yang terdiri dari: <br> <br>
+
+Kepala urusan pemerintahan <br>
+Kepala urusan pembangunan <br>
+Kepala urusan kemasyarakatan <br>
+Kepala urusan pemberdayaan masyarakat <br>
+Perangkat dusun diangkat oleh kepala dusun setelah dikonsultasikan dengan kepala desa dan camat <br></p>
                 <?php elseif ($detail == 'kepala_dusun_III') : ?>
                     <h2 class="text-left text-primary mb-2">Kepala Dusun III</h2>
                     <table class="table table-condensed">
@@ -294,7 +428,37 @@ $detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi';
                             <td>-</td>
                         </tr>
                     </table>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita blanditiis quae nam, rerum quisquam accusamus quibusdam in esse distinctio dolorem. Praesentium eius saepe repudiandae quia adipisci expedita pariatur ipsa similique.</p>
+                    <p>Kepala dusun adalah perangkat desa yang berkedudukan sebagai unsur satuan tugas kewilayahan yang bertugas membantu kepala desa dalam pelaksanaan tugas wilayahnya. Kepala dusun bertanggung jawab kepada kepala desa.<br> <br>
+
+Dalam struktur organisasi desa, kepala dusun berada di bawah sekretaris desa. Kepala dusun bertugas membantu kepala desa dalam melaksanakan kegiatan pemerintahan, pembangunan, pembinaan kemasyarakatan, dan pemberdayaan masyarakat di wilayahnya.<br> <br>
+
+Berikut adalah tugas kepala dusun secara umum: <br> <br>
+
+Membantu kepala desa dalam menyelenggarakan pemerintahan desa di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pembangunan desa di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pembinaan kemasyarakatan di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pemberdayaan masyarakat di wilayahnya <br>
+Selain tugas umum tersebut, kepala dusun juga memiliki tugas khusus yang berkaitan dengan wilayahnya, seperti: <br><br>
+
+Melakukan pendataan penduduk, rumah tangga, dan sarana prasarana di wilayahnya <br>
+Melakukan pembinaan ketentraman dan ketertiban di wilayahnya <br>
+Melakukan pembinaan pemberdayaan masyarakat di wilayahnya <br>
+Melakukan pengelolaan wilayah di wilayahnya <br>
+Kepala dusun diangkat oleh kepala desa setelah dikonsultasikan dengan camat atas nama bupati/walikota. Kepala dusun harus memenuhi persyaratan sebagai berikut:<br> <br>
+
+Warga negara Indonesia yang bertakwa kepada Tuhan Yang Maha Esa <br>
+Berpendidikan minimal Sekolah Menengah Atas (SMA) atau sederajat <br>
+Berusia paling rendah 25 tahun <br>
+Sehat jasmani dan rohani <br>
+Berwibawa dan mampu menggerakkan masyarakat <br>
+Tidak pernah dihukum penjara karena melakukan tindak pidana kejahatan dengan hukuman paling singkat lima tahun.
+Kepala dusun dibantu oleh perangkat dusun, yang terdiri dari: <br> <br>
+
+Kepala urusan pemerintahan <br>
+Kepala urusan pembangunan <br>
+Kepala urusan kemasyarakatan <br>
+Kepala urusan pemberdayaan masyarakat <br>
+Perangkat dusun diangkat oleh kepala dusun setelah dikonsultasikan dengan kepala desa dan camat <br></p>
                 <?php elseif ($detail == 'kepala_dusun_IV') : ?>
                     <h2 class="text-left text-primary mb-2">Kepala Dusun IV</h2>
                     <table class="table table-condensed">
@@ -314,7 +478,37 @@ $detail = isset($_GET['detail']) ? $_GET['detail'] : 'struktur_organisasi';
                             <td>-</td>
                         </tr>
                     </table>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita blanditiis quae nam, rerum quisquam accusamus quibusdam in esse distinctio dolorem. Praesentium eius saepe repudiandae quia adipisci expedita pariatur ipsa similique.</p>
+                    <p>Kepala dusun adalah perangkat desa yang berkedudukan sebagai unsur satuan tugas kewilayahan yang bertugas membantu kepala desa dalam pelaksanaan tugas wilayahnya. Kepala dusun bertanggung jawab kepada kepala desa.<br> <br>
+
+Dalam struktur organisasi desa, kepala dusun berada di bawah sekretaris desa. Kepala dusun bertugas membantu kepala desa dalam melaksanakan kegiatan pemerintahan, pembangunan, pembinaan kemasyarakatan, dan pemberdayaan masyarakat di wilayahnya.<br> <br>
+
+Berikut adalah tugas kepala dusun secara umum: <br> <br>
+
+Membantu kepala desa dalam menyelenggarakan pemerintahan desa di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pembangunan desa di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pembinaan kemasyarakatan di wilayahnya <br>
+Membantu kepala desa dalam menyelenggarakan pemberdayaan masyarakat di wilayahnya <br>
+Selain tugas umum tersebut, kepala dusun juga memiliki tugas khusus yang berkaitan dengan wilayahnya, seperti: <br><br>
+
+Melakukan pendataan penduduk, rumah tangga, dan sarana prasarana di wilayahnya <br>
+Melakukan pembinaan ketentraman dan ketertiban di wilayahnya <br>
+Melakukan pembinaan pemberdayaan masyarakat di wilayahnya <br>
+Melakukan pengelolaan wilayah di wilayahnya <br>
+Kepala dusun diangkat oleh kepala desa setelah dikonsultasikan dengan camat atas nama bupati/walikota. Kepala dusun harus memenuhi persyaratan sebagai berikut:<br> <br>
+
+Warga negara Indonesia yang bertakwa kepada Tuhan Yang Maha Esa <br>
+Berpendidikan minimal Sekolah Menengah Atas (SMA) atau sederajat <br>
+Berusia paling rendah 25 tahun <br>
+Sehat jasmani dan rohani <br>
+Berwibawa dan mampu menggerakkan masyarakat <br>
+Tidak pernah dihukum penjara karena melakukan tindak pidana kejahatan dengan hukuman paling singkat lima tahun.
+Kepala dusun dibantu oleh perangkat dusun, yang terdiri dari: <br> <br>
+
+Kepala urusan pemerintahan <br>
+Kepala urusan pembangunan <br>
+Kepala urusan kemasyarakatan <br>
+Kepala urusan pemberdayaan masyarakat <br>
+Perangkat dusun diangkat oleh kepala dusun setelah dikonsultasikan dengan kepala desa dan camat <br></p>
                 <?php else : ?>
                     <h2 class="text-left text-primary mb-2">Halaman Tidak Ditemukan</h2>
                 <?php endif; ?>

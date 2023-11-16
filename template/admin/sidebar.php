@@ -8,7 +8,13 @@
     </a>
 
     <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Pages
+    </div>
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item <?php if ($page == 'index.php') : echo 'active';
@@ -17,6 +23,30 @@
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
+    <li class="nav-item  <?php if ($page == 'geografisLetak.php' || $page == 'geografisLuas.php') : echo 'active';
+                            endif; ?>">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGeo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fa fa-map" aria-hidden="true"></i>
+            <span>Data Geografis</span>
+        </a>
+        <div id="collapseGeo" class="collapse  <?php if ($page == 'geografisLetak.php' || $page == 'geografisLuas.php') : echo 'show';
+                                                endif; ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item <?php if ($page == 'geografisLetak.php') : echo 'active';
+                                        endif; ?>" href="geografisLetak.php">Data Letak Wilayah</a>
+                <a class="collapse-item <?php if ($page == 'geografisLuas.php') : echo 'active';
+                                        endif; ?>" href="geografisLuas.php">Data Luas Wilayah</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item <?php if ($page == 'demografis.php') : echo 'active';
+                        endif; ?>">
+        <a class="nav-link" href="demografis.php">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <span>Data Demografis</span></a>
+    </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider">
