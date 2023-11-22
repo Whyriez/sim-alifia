@@ -1063,3 +1063,143 @@ if (isset($_GET['hapusSppbd'])) {
 
     if ($sql) header("Location: admin/sppbd.php");
 }
+
+// perangkat desa
+if (isset($_POST['tambahPerangkat'])) {
+    $nama = $_POST['nama'];
+    $jabatan = $_POST['jabatan'];
+    $gambar = $_FILES['gambar']['name'];
+
+    $timestamp = time();
+    $namaGambar = $timestamp . '_' . $gambar;
+
+    $dir = "../assets/gambar/";
+    $tmpFile = $_FILES['gambar']['tmp_name'];
+
+    move_uploaded_file($tmpFile, $dir . $namaGambar);
+
+    $query = "INSERT INTO tb_perangkat_desa (nama, jabatan, gambar) VALUES ('$nama', '$jabatan', '$namaGambar')";
+    $result = mysqli_query($koneksi, $query);
+
+    if ($result) {
+        header("Location: perangkatDesa.php");
+    }
+}
+
+if (isset($_POST['ubahPerangkat'])) {
+    $id= $_POST['id'];
+    $nama = $_POST['nama'];
+    $jabatan = $_POST['jabatan'];
+    $gambar = $_FILES['gambar']['name'];
+
+    $queryShow = "SELECT * FROM tb_perangkat_desa WHERE id = '$id'";
+    $sqlShow = mysqli_query($koneksi, $queryShow);
+    $result = mysqli_fetch_assoc($sqlShow);
+
+
+
+    if ($_FILES['gambar']['name'] == "") {
+        $namaGambar = $result['gambar'];
+    } else {
+        $gambar = $_FILES['gambar']['name'];
+        unlink("../assets/gambar/" . $result['gambar']);
+        $timestamp = time();
+        $namaGambar = $timestamp . '_' . $gambar;
+        move_uploaded_file($_FILES['gambar']['tmp_name'], "../assets/gambar/" . $namaGambar);
+    }
+
+
+    $query = "UPDATE tb_perangkat_desa SET nama='$nama',jabatan='$jabatan', gambar='$namaGambar' WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($result) {
+        header("Location: perangkatDesa.php");
+    }
+}
+
+
+if (isset($_GET['hapusPerangkat'])) {
+    $id = $_GET['hapusPerangkat'];
+    $queryShow = "SELECT * FROM tb_perangkat_desa WHERE id = '$id'";
+    $sqlShow = mysqli_query($koneksi, $queryShow);
+    $result = mysqli_fetch_assoc($sqlShow);
+
+    unlink("assets/gambar/" . $result['gambar']);
+
+    $query = "DELETE FROM tb_perangkat_desa WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($sql) header("Location: admin/perangkatdesa.php");
+}
+
+
+// lembaga desa
+if (isset($_POST['tambahLembaga'])) {
+    $nama = $_POST['nama_lembaga'];
+    $singkatan = $_POST['singkatan_nama'];
+    $alamat = $_POST['alamat_kantor'];
+    $gambar = $_FILES['gambar']['name'];
+
+    $timestamp = time();
+    $namaGambar = $timestamp . '_' . $gambar;
+
+    $dir = "../assets/gambar/";
+    $tmpFile = $_FILES['gambar']['tmp_name'];
+
+    move_uploaded_file($tmpFile, $dir . $namaGambar);
+
+    $query = "INSERT INTO tb_lembaga (nama_lembaga, singkatan_nama, alamat_kantor, gambar) VALUES ('$nama', '$singkatan', '$alamat', '$namaGambar')";
+    $result = mysqli_query($koneksi, $query);
+
+    if ($result) {
+        header("Location: lembagaDesa.php");
+    }
+}
+
+
+if (isset($_POST['ubahLembaga'])) {
+    $id = $_POST['id'];
+    $nama = $_POST['nama_lembaga'];
+    $singkatan = $_POST['singkatan_lembaga'];
+    $alamat = $_POST['alamat_kantor'];
+    $gambar = $_FILES['gambar']['name'];
+
+    $queryShow = "SELECT * FROM tb_lembaga WHERE id = '$id'";
+    $sqlShow = mysqli_query($koneksi, $queryShow);
+    $result = mysqli_fetch_assoc($sqlShow);
+
+
+
+    if ($_FILES['gambar']['name'] == "") {
+        $namaGambar = $result['gambar'];
+    } else {
+        $gambar = $_FILES['gambar']['name'];
+        unlink("../assets/gambar/" . $result['gambar']);
+        $timestamp = time();
+        $namaGambar = $timestamp . '_' . $gambar;
+        move_uploaded_file($_FILES['gambar']['tmp_name'], "../assets/gambar/" . $namaGambar);
+    }
+
+
+    $query = "UPDATE tb_lembaga SET nama_lembaga='$nama', singkatan_nama='$singkatan', alamat_kantor='$alamat', gambar='$namaGambar' WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($result) {
+        header("Location: lembagaDesa.php");
+    }
+}
+
+if (isset($_GET['hapusLembaga'])) {
+    $id = $_GET['hapusLembaga'];
+    $queryShow = "SELECT * FROM tb_lembaga WHERE id = '$id'";
+    $sqlShow = mysqli_query($koneksi, $queryShow);
+    $result = mysqli_fetch_assoc($sqlShow);
+
+    unlink("assets/gambar/" . $result['gambar']);
+
+    $query = "DELETE FROM tb_lembaga WHERE id = '$id'";
+    $sql = mysqli_query($koneksi, $query);
+
+    if ($sql) header("Location: admin/lembagaDesa.php");
+}
+

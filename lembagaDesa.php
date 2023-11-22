@@ -1,5 +1,6 @@
 <?php
 $title = "Lembaga Desa";
+require('function.php');
 include("template/user/header.php");
 include("template/user/navbar.php"); ?>
 
@@ -12,18 +13,21 @@ include("template/user/navbar.php"); ?>
                 <th>Nama Lembaga</th>
                 <th>Alamat Kantor</th>
             </thead>
-            <tbody>
-                <tr>
-                    <td>BADAN PERMUSYAWARATAN DESA <br> <span class="badge bg-primary">BPD</span></td>
-                    <td>Jl. Ahmad Sodik No. 17 <img src="assets/img/LogoBonebolango.png" class="float-end" width="40" alt=""></td>
-                </tr>
-                <tr>
-                    <td>LEMBAGA KEMASYARAKATAN <br> <span class="badge bg-primary">LKD</span></td>
-                    <td>
-                    Jl. Ahmad Sodik No. 17 <img src="assets/img/LogoBonebolango.png" class="float-end " width="40" alt="">
-                    </td>
-                </tr>
-            </tbody>
+
+            <?php $loop = mysqli_query($koneksi, "select * from tb_lembaga");
+
+
+            while ($a = mysqli_fetch_array($loop)) { ?>
+                <tbody>
+                    <tr>
+
+                        <td><?= $a['nama_lembaga'] ?><br> <span class="badge bg-primary"><?= $a['singkatan_nama'] ?></span></td>
+                        <td><?= $a['alamat_kantor'] ?><img src="assets/gambar/<?= $a['gambar'] ?>" class="float-end" width="40" alt=""></td>
+
+                    </tr>
+                </tbody>
+            <?php } ?>
+
         </table>
     </div>
 </div>

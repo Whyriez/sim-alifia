@@ -75,6 +75,18 @@
             <i class="fas fa-fw fa-landmark"></i>
             <span>Potensi Desa</span></a>
     </li>
+    <li class="nav-item <?php if ($page == 'perangkatDesa.php') : echo 'active';
+                        endif; ?>">
+        <a class="nav-link" href="perangkatDesa.php">
+            <i class="fas fa-fw fa-landmark"></i>
+            <span>Perangkat Desa</span></a>
+    </li>
+    <li class="nav-item <?php if ($page == 'lembagatDesa.php') : echo 'active';
+                        endif; ?>">
+        <a class="nav-link" href="lembagaDesa.php">
+            <i class="fas fa-fw fa-landmark"></i>
+            <span>Lembaga Desa</span></a>
+    </li>
 
     <li class="nav-item  <?php if ($page == 'suratPindahPenduduk.php' || $page == 'suratPengantarNikah.php' || $page == 'suratMeninggalDunia.php' || $page == 'suketAhliWaris.php' || $page == 'suketKelahiran.php' || $page == 'suketTanah.php' || $page == 'suratKK.php' || $page == 'suratAkta.php' || $page == 'suratTidakMampu.php' || $page == 'suketPenghasilan.php' || $page == 'sppbd.php') : echo 'active';
                             endif; ?>">

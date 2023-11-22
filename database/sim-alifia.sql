@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 08, 2023 at 03:33 PM
+-- Generation Time: Nov 22, 2023 at 09:58 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -33,7 +33,7 @@ CREATE TABLE `berita` (
   `deskripsi` text NOT NULL,
   `gambar` varchar(255) NOT NULL,
   `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -43,21 +43,21 @@ CREATE TABLE `berita` (
 
 CREATE TABLE `pelayanan_surat` (
   `id` int NOT NULL,
-  `nama` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `nama` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `nomor` varchar(23) NOT NULL,
-  `surat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `kk` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `ktp` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `buku_nikah` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `other_ktp` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `ijasah` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `surat` varchar(50) DEFAULT NULL,
+  `kk` varchar(50) DEFAULT NULL,
+  `ktp` varchar(50) DEFAULT NULL,
+  `buku_nikah` varchar(50) DEFAULT NULL,
+  `other_ktp` varchar(50) DEFAULT NULL,
+  `ijasah` varchar(50) DEFAULT NULL,
   `alamat` varchar(50) DEFAULT NULL,
-  `foto` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `rapor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `other_surat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `foto` varchar(50) DEFAULT NULL,
+  `rapor` varchar(50) DEFAULT NULL,
+  `other_surat` varchar(50) DEFAULT NULL,
   `tanggal` date NOT NULL,
   `jenis` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -69,9 +69,9 @@ CREATE TABLE `pengumuman` (
   `id` int NOT NULL,
   `judul` varchar(100) NOT NULL,
   `deskripsi` text NOT NULL,
-  `gambar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `gambar` varchar(100) NOT NULL,
   `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -84,9 +84,98 @@ CREATE TABLE `potensi_desa` (
   `judul` varchar(100) NOT NULL,
   `deskripsi` text NOT NULL,
   `kategori` varchar(50) NOT NULL,
-  `gambar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `gambar` varchar(150) NOT NULL,
   `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_lembaga`
+--
+
+CREATE TABLE `tb_lembaga` (
+  `id` int NOT NULL,
+  `nama_lembaga` varchar(225) NOT NULL,
+  `singkatan_nama` varchar(50) NOT NULL,
+  `alamat_kantor` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `gambar` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_lembaga`
+--
+
+INSERT INTO `tb_lembaga` (`id`, `nama_lembaga`, `singkatan_nama`, `alamat_kantor`, `gambar`) VALUES
+(4, 'didin', 'DZ', 'tes', '1700646741_Ijazah SMA.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_letak_wilayah`
+--
+
+CREATE TABLE `tb_letak_wilayah` (
+  `id` int NOT NULL,
+  `batas` varchar(100) NOT NULL,
+  `desa` varchar(100) NOT NULL,
+  `kecamatan` varchar(100) NOT NULL,
+  `kabupaten` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_letak_wilayah`
+--
+
+INSERT INTO `tb_letak_wilayah` (`id`, `batas`, `desa`, `kecamatan`, `kabupaten`) VALUES
+(1, 'A2uADjAfG0', '9BXX8FWpoQ', 'm3aCdefJFf', '34LFhpZHwV');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_luas_wilayah`
+--
+
+CREATE TABLE `tb_luas_wilayah` (
+  `id` int NOT NULL,
+  `peruntukan` varchar(100) NOT NULL,
+  `luas` varchar(25) NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `tb_luas_wilayah`
+--
+
+INSERT INTO `tb_luas_wilayah` (`id`, `peruntukan`, `luas`, `keterangan`) VALUES
+(1, 'zz306ta3kg', 'me3mTuzGkt', 'MRSs6QoqZV');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_penduduk`
+--
+
+CREATE TABLE `tb_penduduk` (
+  `id` int NOT NULL,
+  `jumlah_laki` int NOT NULL,
+  `jumlah_perempuan` int NOT NULL,
+  `total_penduduk` int NOT NULL,
+  `jumlah_kepala` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_perangkat_desa`
+--
+
+CREATE TABLE `tb_perangkat_desa` (
+  `id` int NOT NULL,
+  `nama` varchar(225) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `jabatan` varchar(225) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `gambar` varchar(225) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -99,7 +188,7 @@ CREATE TABLE `users` (
   `username` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
@@ -137,6 +226,36 @@ ALTER TABLE `potensi_desa`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb_lembaga`
+--
+ALTER TABLE `tb_lembaga`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_letak_wilayah`
+--
+ALTER TABLE `tb_letak_wilayah`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_luas_wilayah`
+--
+ALTER TABLE `tb_luas_wilayah`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_penduduk`
+--
+ALTER TABLE `tb_penduduk`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tb_perangkat_desa`
+--
+ALTER TABLE `tb_perangkat_desa`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -150,25 +269,55 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pelayanan_surat`
 --
 ALTER TABLE `pelayanan_surat`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `pengumuman`
 --
 ALTER TABLE `pengumuman`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `potensi_desa`
 --
 ALTER TABLE `potensi_desa`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tb_lembaga`
+--
+ALTER TABLE `tb_lembaga`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tb_letak_wilayah`
+--
+ALTER TABLE `tb_letak_wilayah`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb_luas_wilayah`
+--
+ALTER TABLE `tb_luas_wilayah`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb_penduduk`
+--
+ALTER TABLE `tb_penduduk`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_perangkat_desa`
+--
+ALTER TABLE `tb_perangkat_desa`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
