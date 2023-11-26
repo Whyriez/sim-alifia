@@ -29,7 +29,8 @@ include('../template/admin/sidebar.php');
                             <tbody>
                                 <?php $loop = mysqli_query($koneksi, "select * from pengumuman");
 
-                                while ($a = mysqli_fetch_array($loop)) { ?>
+                                while ($a = mysqli_fetch_array($loop)) {
+                                ?>
                                     <tr>
                                         <td> <img src="../assets/gambar/<?= $a['gambar'] ?>" width="50" height="50" alt=""></td>
                                         <td><?= $a['judul'] ?></td>
@@ -106,7 +107,10 @@ include('../template/admin/sidebar.php');
     <!-- Modal Edit-->
     <?php $loop = mysqli_query($koneksi, "select * from pengumuman");
 
-    while ($a = mysqli_fetch_array($loop)) { ?>
+    while ($a = mysqli_fetch_array($loop)) {
+        $deskripsi = preg_replace("/<br\s*\/?>/", " ", $a['deskripsi']);
+
+    ?>
         <div class="modal fade" id="modalEdit<?= $a['id'] ?>" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -125,7 +129,7 @@ include('../template/admin/sidebar.php');
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Deskripsi</label>
-                                <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"> <?= $a['deskripsi'] ?></textarea>
+                                <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"> <?= htmlspecialchars($deskripsi) ?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Upload Gambar</label>

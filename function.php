@@ -237,7 +237,7 @@ if (isset($_POST['ubahPengumuman'])) {
     $sql = mysqli_query($koneksi, $query);
 
     if ($result) {
-        header("Location: pengumuman    .php");
+        header("Location: pengumuman.php");
     }
 }
 
