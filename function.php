@@ -265,16 +265,19 @@ if (isset($_POST['ubahDemografis'])) {
     $jml_tot_penduduk = $_POST['jml_tot_penduduk'];
     $jml_kepala = $_POST['jml_kepala'];
 
-    $queryShow = "SELECT * FROM berita WHERE id = '$id'";
+    $queryShow = "SELECT * FROM tb_penduduk";
     $sqlShow = mysqli_query($koneksi, $queryShow);
-    $result = mysqli_fetch_assoc($sqlShow);
+    $hitung = mysqli_num_rows($sqlShow);
 
-
-    $query = "UPDATE tb_penduduk SET jumlah_laki='$jml_laki',jumlah_perempuan='$jml_perempuan', total_penduduk= '$jml_tot_penduduk', jumlah_kepala= '$jml_kepala' WHERE id = '$id'";
-    $sql = mysqli_query($koneksi, $query);
-
-    if ($result) {
+    if ($hitung > 0) {
+        $query = "UPDATE tb_penduduk SET jumlah_laki='$jml_laki',jumlah_perempuan='$jml_perempuan', total_penduduk= '$jml_tot_penduduk', jumlah_kepala= '$jml_kepala' WHERE id = '$id'";
+        $sql = mysqli_query($koneksi, $query);
         header("Location: demografis.php");
+    } else {
+        $result = mysqli_query($koneksi, "INSERT INTO tb_penduduk (jumlah_laki, jumlah_perempuan, total_penduduk, jumlah_kepala) VALUES ('$jml_laki','$jml_perempuan','$jml_tot_penduduk', '$jml_kepala')");
+        if ($result) {
+            header("Location: demografis.php");
+        }
     }
 }
 
@@ -1087,7 +1090,7 @@ if (isset($_POST['tambahPerangkat'])) {
 }
 
 if (isset($_POST['ubahPerangkat'])) {
-    $id= $_POST['id'];
+    $id = $_POST['id'];
     $nama = $_POST['nama'];
     $jabatan = $_POST['jabatan'];
     $gambar = $_FILES['gambar']['name'];
@@ -1202,4 +1205,3 @@ if (isset($_GET['hapusLembaga'])) {
 
     if ($sql) header("Location: admin/lembagaDesa.php");
 }
-

@@ -29,7 +29,7 @@ include("template/user/navbar.php"); ?>
                     <tr>
                         <td><?= $a['batas'] ?></td>
                         <td><?= $a['desa'] ?></td>
-                        <td><?= $a['kecamatan'] ?>a</td>
+                        <td><?= $a['kecamatan'] ?></td>
                         <td><?= $a['kabupaten'] ?></td>
                     </tr>
                 <?php $id++;
